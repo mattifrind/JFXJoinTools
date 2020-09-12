@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="JFX_Extensions_API">
     <output-path>$PROJECT_DIR$/../CompileOutput</output-path>
     <root id="archive" name="JFX_Extensions_API.jar">
-      <element id="module-output" name="JFX_Extensions_API" />
+      <element id="module-output" name="JoinTools_Launcher" />
     </root>
   </artifact>
 </component>

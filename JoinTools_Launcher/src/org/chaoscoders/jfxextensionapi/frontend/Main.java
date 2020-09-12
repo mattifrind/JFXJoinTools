@@ -110,7 +110,7 @@ public class Main extends Application {
                         //TODO: exception handling für fälle wo der pfad falsch ist
                         Class<?> pluginMainClass = helper.getClassFromPath(plugin, path);
 
-                        //NOsuchmethod, instantiationexception
+                        //TODO: NOsuchmethod, instantiationexception catchen
                         if(pluginMainClass.getConstructor(int.class).newInstance(pluginID) instanceof JavaFXExtension){
                             JavaFXExtension extension = (JavaFXExtension) pluginMainClass.getConstructor(int.class).newInstance(pluginID);
                             Main.plugins.add(extension);
