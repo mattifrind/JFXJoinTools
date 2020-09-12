@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JFX_Extensions_API.iml" filepath="$PROJECT_DIR$/JFX_Extensions_API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JoinTools_Launcher.iml" filepath="$PROJECT_DIR$/JoinTools_Launcher.iml" />
     </modules>
   </component>
 </project>

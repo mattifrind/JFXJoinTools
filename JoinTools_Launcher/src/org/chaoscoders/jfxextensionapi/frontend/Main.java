@@ -12,13 +12,12 @@ import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import org.chaoscoders.jfxextensionapi.api.Helper;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
-import org.chaoscoders.jfxextensionapi.api.config.Configloader;
 import org.chaoscoders.jfxextensionapi.api.util.GuiManager;
 import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
 import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
 import org.chaoscoders.jfxextensionapi.frontend.util.Widget;
+import org.chaoscoders.jfxextensionapi.frontend.config.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,10 +57,14 @@ public class Main extends Application {
         GuiManager.root.setCenter(node);
     }
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     private void initInstances(){
         plugins = new ArrayList<>();
         tmpdir = System.getProperty("java.io.tmpdir");
-        pluginFolder = "D:\\Dokumente\\PluginFolder";
+        pluginFolder = "../plugins";
         pluginMainpages = new HashMap<>();
         GuiManager.initIcons();
         GuiManager.poweroffscreen = new ShutDownMenu();
@@ -86,11 +89,6 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     public Parent getHubLayout(){
 
         VBox vBox = new VBox();
@@ -110,7 +108,7 @@ public class Main extends Application {
                         //TODO: exception handling für fälle wo der pfad falsch ist
                         Class<?> pluginMainClass = helper.getClassFromPath(plugin, path);
 
-                        //NOsuchmethod, instantiationexception
+                        //TODO: NOsuchmethod, instantiationexception catchen
                         if(pluginMainClass.getConstructor(int.class).newInstance(pluginID) instanceof JavaFXExtension){
                             JavaFXExtension extension = (JavaFXExtension) pluginMainClass.getConstructor(int.class).newInstance(pluginID);
                             Main.plugins.add(extension);

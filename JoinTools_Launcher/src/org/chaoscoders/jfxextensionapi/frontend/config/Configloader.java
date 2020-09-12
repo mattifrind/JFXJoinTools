@@ -1,4 +1,4 @@
-package org.chaoscoders.jfxextensionapi.api.config;
+package org.chaoscoders.jfxextensionapi.frontend.config;
 
 import org.chaoscoders.jfxextensionapi.frontend.Main;
 

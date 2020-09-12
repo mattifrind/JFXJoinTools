@@ -9,8 +9,10 @@ import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 
 
+@SuppressWarnings("ALL")
 public class ExtensionMain extends JavaFXExtension {
 
+    @SuppressWarnings("unused")
     public ExtensionMain(int pluginID) {
         super(pluginID);
     }

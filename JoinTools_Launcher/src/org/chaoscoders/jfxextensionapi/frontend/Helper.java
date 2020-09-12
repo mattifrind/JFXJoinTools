@@ -1,4 +1,4 @@
-package org.chaoscoders.jfxextensionapi.api;
+package org.chaoscoders.jfxextensionapi.frontend;
 
 import javafx.scene.image.Image;
 import org.chaoscoders.jfxextensionapi.frontend.Main;
