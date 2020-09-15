@@ -26,6 +26,8 @@ public class ConfigLoader {
 
     public static HashMap<String, String> getConfigContent(File jar, UUID pluginUUID){
 
+        init();
+
         HashMap<String, String> result = new HashMap<>();
 
         ArrayList<String> parameters = new ArrayList<>(
@@ -49,6 +51,9 @@ public class ConfigLoader {
 
 
     public static String getConfigParameter(URL jar, String parameter, UUID pluginUUID) {
+
+        init();
+
 
         String result = "";
 
