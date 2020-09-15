@@ -1,4 +1,4 @@
-package org.chaoscoders.jfxextensionapi.frontend;
+package org.chaoscoders.jfxextensionapi.frontend.util;
 
 import javafx.scene.image.Image;
 import org.chaoscoders.jfxextensionapi.frontend.Main;
@@ -54,21 +54,5 @@ public class Helper {
     }
 
 
-
-    public Class<?> getClassFromPath(File jar, String classpath){
-
-        try{
-            ClassLoader loader = URLClassLoader.newInstance(
-                    new URL[] { jar.toURL() },
-                    getClass().getClassLoader()
-            );
-            Class<?> clazz = Class.forName(classpath, true, loader);
-            return clazz;
-        }catch (MalformedURLException | ClassNotFoundException e){
-            e.printStackTrace();
-        }
-        System.out.println("Klasse nicht gefunden!");
-        return null;
-    }
 
 }

@@ -3,6 +3,8 @@ package org.chaoscoders.jfxextensionapi.api.settings;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 
+import java.util.UUID;
+
 public class SettingManager {
 
     //TODO: Methoden um Settings auszulesen und zu schreiben, sowie zu speichern
@@ -25,7 +27,7 @@ public class SettingManager {
         return null;
     }
 
-    public static Node getSettingsPage(int pluginID){
+    public static Node getSettingsPage(UUID pluginID){
         //TODO: Build settings pane
         GridPane g = new GridPane();
         return g;

@@ -1,24 +1,22 @@
 package org.chaoscoders.jfxextensionapi.api;
 
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
+
+import java.util.UUID;
 
 
 public abstract class JavaFXExtension implements Extensionmethods {
 
-    private final int pluginID;
+    private final UUID pluginID;
 
-    public JavaFXExtension(int pluginID){
+    public JavaFXExtension(UUID pluginID){
         this.pluginID = pluginID;
     }
 
-    public void start(){
-        //Node jNode = getRoot();
-        //System.out.println(jNode.toString());
-    }
-
-    public int getPluginID(){
+    public UUID getPluginID(){
         return this.pluginID;
     }
 }
