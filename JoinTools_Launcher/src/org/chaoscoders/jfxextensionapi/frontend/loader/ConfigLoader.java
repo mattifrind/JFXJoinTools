@@ -6,7 +6,6 @@ import org.chaoscoders.jfxextensionapi.frontend.util.exceptions.InvalidPluginYML
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,8 +24,7 @@ public class ConfigLoader {
             pluginConfigs = new HashMap<>();
     }
 
-    public static HashMap<String, String> getConfigContent(File jar){
-
+    public static HashMap<String, String> getConfigContent(File jar, UUID pluginUUID){
 
         HashMap<String, String> result = new HashMap<>();
 
@@ -35,7 +33,7 @@ public class ConfigLoader {
 
         for (String s : parameters){
             try {
-                String param = getConfigParameter(jar.toURL(), s);
+                String param = getConfigParameter(jar.toURL(), s, pluginUUID);
                 if(param.equals("")){
                     throw new InvalidPluginYMLException("Invalid plugin.yml (plugin: "
                             + jar.getName() + ").");
@@ -49,30 +47,24 @@ public class ConfigLoader {
         return result;
     }
 
-    public static String getConfigParameter(URL jar, String parameter) {
+
+    public static String getConfigParameter(URL jar, String parameter, UUID pluginUUID) {
 
         String result = "";
 
-
-        ZipInputStream zip = null;
+        ZipInputStream zipIs;
         try {
-            zip = new ZipInputStream(jar.openStream());
-            while(true) {
-                ZipEntry e = zip.getNextEntry();
-                if (e == null)
-                    break;
+            zipIs = new ZipInputStream(jar.openStream());
+            ZipEntry e;
+            while((e = zipIs.getNextEntry()) != null) {
                 String name = e.getName();
                 ZipFile zf = new ZipFile(jar.getFile());
                 InputStream is = zf.getInputStream(e);
                 if(name.equalsIgnoreCase("plugin.yml")){
                     //plugin.yml gefunden
-                    try{
-                        Files.delete(Paths.get(Main.tmpdir + "\\tmp.txt"));
-                    }catch (NoSuchFileException ignored){ }
+                    Files.copy(is, Paths.get(Main.getTmpdir(pluginUUID) + "\\tmp.txt"));
 
-                    Files.copy(is, Paths.get(Main.tmpdir + "\\tmp.txt"));
-
-                    BufferedReader br = new BufferedReader(new FileReader(new File(Main.tmpdir + "\\tmp.txt")));
+                    BufferedReader br = new BufferedReader(new FileReader(new File(Main.getTmpdir(pluginUUID) + "\\tmp.txt")));
                     String line = null;
                     while (( line = br.readLine()) != null ){
                         if(line.contains(parameter + ": ")){
@@ -80,7 +72,7 @@ public class ConfigLoader {
                         }
                     }
                     br.close();
-                    Files.delete(Paths.get(Main.tmpdir + "\\tmp.txt"));
+                    Files.delete(Paths.get(Main.getTmpdir(pluginUUID) + "\\tmp.txt"));
                 }
             }
         } catch (IOException e) {

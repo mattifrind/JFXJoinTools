@@ -39,6 +39,7 @@ public class ExtensionLoader {
     private static HashMap<UUID, Settings> extensionSettings;
     private static HashMap<UUID, ExtensionInfo> extensionInfos;
     private static HashMap<UUID, Image> extensionIcons;
+    private static HashMap<UUID, HashMap<String, String>> extensionConfigs;
     private static HashMap<UUID, Widget> extensionWidgets;
 
 
@@ -46,6 +47,11 @@ public class ExtensionLoader {
     public static Settings getExtensionSettings(UUID pluginUUID){
         init();
         return extensionSettings.get(pluginUUID);
+    }
+
+    public static HashMap<String, String> getExtensionConfigs(UUID pluginUUID){
+        init();
+        return extensionConfigs.get(pluginUUID);
     }
 
     public static ExtensionInfo getExtensionInfo(UUID pluginUUID){
@@ -68,6 +74,56 @@ public class ExtensionLoader {
         return extensionWidgets;
     }
 
+    public static void loadPlugins(){
+        init();
+
+        for(File jar : Objects.requireNonNull((new File(Main.pluginFolder)).listFiles())){
+            if (jar.isFile() && jar.getName().endsWith(".jar")) {
+                try {
+                    UUID pluginUUID = UUID.randomUUID();
+
+                    String path = ConfigLoader.getConfigParameter(jar.toURL(), "main", pluginUUID);
+
+                    Class<?> pluginMainClass = getClassFromPath(jar, path);
+                    Class<?> constructorParam = UUID.class;
+
+                    if(pluginMainClass.getConstructor(constructorParam).newInstance(pluginUUID) instanceof JavaFXExtension){
+                        JavaFXExtension extension = (JavaFXExtension) pluginMainClass.
+                                getConstructor(constructorParam).newInstance(pluginUUID);
+
+                        Method rootMethod = pluginMainClass.getMethod("getRoot");
+                        Method getSettingsMethod = pluginMainClass.getMethod("getSettings");
+                        Method getInfoMethod = pluginMainClass.getMethod("getInfo");
+
+                        extensionSettings.put(pluginUUID, (Settings) getSettingsMethod.invoke(extension));
+                        extensionInfos.put(pluginUUID, (ExtensionInfo) getInfoMethod.invoke(extension));
+                        extensionIcons.put(pluginUUID, getExtensionIcon(jar.toURL(), pluginUUID));
+                        extensionConfigs.put(pluginUUID, ConfigLoader.getConfigContent(jar, pluginUUID));
+                        extensionMainPages.put(pluginUUID, (Node) rootMethod.invoke(extension));
+                        extensionWidgets.put(pluginUUID, new Widget(pluginUUID));
+
+                        ExtensionLoader.plugins.add(extension);
+                    }
+
+
+                }catch(IOException | NoSuchMethodException | IllegalAccessException |
+                        InstantiationException | InvocationTargetException |
+                        InvalidPluginYMLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static JavaFXExtension resolvePluginID(UUID pluginID){
+        for(JavaFXExtension javaFXExtension : plugins){
+            if(javaFXExtension.getPluginID() == pluginID){
+                return javaFXExtension;
+            }
+        }
+        System.out.println("Error. Couldn't resolve pluginID");
+        return null;
+    }
 
 
     //private internal methods
@@ -81,57 +137,18 @@ public class ExtensionLoader {
         if(extensionWidgets == null){
             extensionWidgets = new HashMap<>();
         }
-    }
-
-    public Parent getHubLayout(){
-        init();
-
-        for(File jar : Objects.requireNonNull((new File(Main.pluginFolder)).listFiles())){
-            if (jar.isFile() && jar.getName().endsWith(".jar")) {
-                try {
-                    //TODO: auf configloader umstellen
-                    String path = ConfigLoader.getConfigParameter(jar.toURL(), "main");
-                    String name = ConfigLoader.getConfigParameter(jar.toURL(), "name");
-                    String tooltip = ConfigLoader.getConfigParameter(jar.toURL(), "tooltip");
-
-                    Class<?> pluginMainClass = getClassFromPath(jar, path);
-                    Class<?> constructorParam = UUID.class;
-                    UUID pluginUUID = UUID.randomUUID();
-
-                    //TODO: NOsuchmethod, instantiationexception catchen
-                    if(pluginMainClass.getConstructor(constructorParam).newInstance(pluginUUID) instanceof JavaFXExtension){
-                        JavaFXExtension extension = (JavaFXExtension) pluginMainClass.
-                                getConstructor(constructorParam).newInstance(pluginUUID);
-
-                        Method rootMethod = pluginMainClass.getMethod("getRoot");
-                        Method getSettingsMethod = pluginMainClass.getMethod("getSettings");
-                        Method getInfoMethod = pluginMainClass.getMethod("getInfo");
-
-                        extensionSettings.put(pluginUUID, (Settings) getSettingsMethod.invoke(extension));
-                        extensionInfos.put(pluginUUID, (ExtensionInfo) getInfoMethod.invoke(extension));
-                        extensionIcons.put(pluginUUID, getExtensionIcon(jar.toURL(), pluginUUID));
-
-                        extensionMainPages.put(pluginUUID, (Node) rootMethod.invoke(extension));
-                        extensionWidgets.put(pluginUUID, new Widget(pluginUUID));
-
-                        Main.plugins.add(extension);
-                    }
-
-
-                }catch(IOException | NoSuchMethodException | IllegalAccessException |
-                        InstantiationException | InvocationTargetException |
-                        InvalidPluginYMLException e){
-                    e.printStackTrace();
-                }
-            }
+        if(extensionConfigs == null){
+            extensionConfigs = new HashMap<>();
         }
-        ScrollPane root = new ScrollPane();
-        root.pannableProperty().set(true);
-        root.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        root.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
-        root.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth() - 200);
-        root.setMaxWidth(Screen.getPrimary().getVisualBounds().getWidth() - 200);
-        return root;
+        if(extensionIcons == null){
+            extensionIcons = new HashMap<>();
+        }
+        if(extensionSettings == null){
+            extensionSettings = new HashMap<>();
+        }
+        if(extensionInfos == null){
+            extensionInfos = new HashMap<>();
+        }
     }
 
 
@@ -149,10 +166,10 @@ public class ExtensionLoader {
                 ZipFile zf = new ZipFile(jar.getFile());
                 String iconname = jar.toString().substring(jar.toString().lastIndexOf("/") + 1, jar.toString().length() - 4);
                 //TODO: ...
-                path = Main.getTmpdir() + "icon_" + iconname + ".png";
+                path = Main.getTmpdir(pluginUUID) + "\\icon_" + iconname + ".png";
                 InputStream is = zf.getInputStream(e);
                 if (name.equalsIgnoreCase("icon.png")) {
-                    //plugin.yml gefunden
+                    //icon gefunden
                     try {
                         Files.delete(Paths.get(path));
                     } catch (NoSuchFileException eFn) {
@@ -172,15 +189,14 @@ public class ExtensionLoader {
         }
     }
 
-    private Class<?> getClassFromPath(File jar, String classpath) throws InvalidPluginYMLException {
+    private static Class<?> getClassFromPath(File jar, String classpath) throws InvalidPluginYMLException {
 
         try{
             ClassLoader loader = URLClassLoader.newInstance(
                     new URL[] { jar.toURL() },
-                    getClass().getClassLoader()
+                    ExtensionLoader.class.getClassLoader()
             );
-            Class<?> clazz = Class.forName(classpath, true, loader);
-            return clazz;
+            return Class.forName(classpath, true, loader);
         }catch (MalformedURLException | ClassNotFoundException e){
             throw new InvalidPluginYMLException("Invalid path to main class " + jar.getName() + ".", e);
         }
