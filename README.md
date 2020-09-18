@@ -12,7 +12,7 @@ Willkommen zu unserem JavaFX Learning Repository. Der Setup ist nicht ganz so tr
   - File → Project Structure → Project → Project SDK → New → JDK → Java 15 Ordner auswählen (C:\Program Files\Java\jdk-15)
   - File → Project Structure → Libraries → “lib” → Library Verbindung wiederherstellen. Auf Minus klicken, auf Plus klicken. Ordner zu JavaFX 15 auswählen und hinzufügen
   - File → Project Structure → Project → VM Options: Pfad zu JavaFX lib anpassen (also z.B. C:\Program Files\Java\openjfx-15_windows-x64_bin-sdk\javafx-sdk-15\lib)
-  - Rechtsklick auf “Main” → Run Main.main() (ab jetzt kannst du rechts oben auf den grünen Haken zum Starten klicken)
+  - Rechtsklick auf “Main” → Run Main.main(). Das wirft vermutlich nen Fehler. Rechts oben auf den Dropdown mit "Main" klicken → Edit Configurations → In die VM Options eintragen: "--module-path "path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml" (ab jetzt kannst du rechts oben auf den grünen Haken zum Starten klicken)
   - File → Project Structure → Artifacts → Output directory → auf Ordner “plugins” in Repository Ordner umlegen
 - Mit JoinTools_Launcher:
   - Projekt in IntelliJ öffnen
