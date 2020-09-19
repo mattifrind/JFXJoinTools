@@ -3,22 +3,17 @@ package org.chaoscoders.jfxextensionapi.frontend;
 import javafx.application.Application;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.util.GuiManager;
 import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
 import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
 import org.chaoscoders.jfxextensionapi.frontend.util.TempFileManager;
 
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.UUID;
 
 public class Main extends Application {
@@ -62,7 +57,7 @@ public class Main extends Application {
 
         GuiManager.customMenubar = new CustomMenubar(Screen.getPrimary().getVisualBounds().getWidth());
 
-        GuiManager.home = new VBox(ExtensionLoader.getExtensionWidget(ExtensionLoader.getPlugins().get(0).getPluginID()));
+        GuiManager.home = new VBox(ExtensionLoader.getExtensionWidget(ExtensionLoader.getPlugins().get(0).getPluginUUID()));
 
         GuiManager.root = new BorderPane();
         GuiManager.showHomeScreen();

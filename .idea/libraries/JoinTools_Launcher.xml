@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="JoinTools_Launcher">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/javafx.base" />
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/javafx.controls" />
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/javafx.fxml" />
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/javafx.graphics" />
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/javafx.media" />
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/javafx.swing" />
+      <root url="jar://$PROJECT_DIR$/CompileOutput/JoinTools_Launcher.jar!/javafx.web" />
+    </SOURCES>
+  </library>
+</component>

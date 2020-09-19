@@ -7,8 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="JFX_Extensions_API" level="project" />
     <orderEntry type="module" module-name="JoinTools_Launcher" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="JoinTools_Launcher" level="project" />
   </component>
 </module>

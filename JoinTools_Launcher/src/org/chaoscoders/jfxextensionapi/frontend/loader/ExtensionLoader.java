@@ -1,10 +1,7 @@
 package org.chaoscoders.jfxextensionapi.frontend.loader;
 
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
-import javafx.stage.Screen;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
@@ -91,6 +88,9 @@ public class ExtensionLoader {
         if(! plDir.exists()) {
             plDir.mkdirs();
         }
+
+
+
         for(File jar : Objects.requireNonNull((new File(Main.pluginFolder)).listFiles())){
             if (jar.isFile() && jar.getName().endsWith(".jar")) {
                 try {
@@ -101,6 +101,10 @@ public class ExtensionLoader {
 
                     Class<?> pluginMainClass = getClassFromPath(jar, path);
                     Class<?> constructorParam = UUID.class;
+
+                    CustomFXMLLoader.loadFXMLFiles(jar.toURL(),
+                            ConfigLoader.getConfigParameter(jar.toURL(), "layout", pluginUUID), pluginUUID);
+
 
                     if(pluginMainClass.getConstructor(constructorParam).newInstance(pluginUUID) instanceof JavaFXExtension){
                         JavaFXExtension extension = (JavaFXExtension) pluginMainClass.
@@ -117,9 +121,6 @@ public class ExtensionLoader {
                         extensionMainPages.put(pluginUUID, (Node) rootMethod.invoke(extension));
                         extensionWidgets.put(pluginUUID, new Widget(pluginUUID));
 
-                        CustomFXMLLoader.getExtensionIcon(jar.toURL(),
-                                ConfigLoader.getConfigParameter(jar.toURL(), "layout", pluginUUID), pluginUUID);
-
                         ExtensionLoader.plugins.add(extension);
                     }
 
@@ -135,7 +136,7 @@ public class ExtensionLoader {
 
     public static JavaFXExtension resolvePluginID(UUID pluginID){
         for(JavaFXExtension javaFXExtension : plugins){
-            if(javaFXExtension.getPluginID() == pluginID){
+            if(javaFXExtension.getPluginUUID() == pluginID){
                 return javaFXExtension;
             }
         }

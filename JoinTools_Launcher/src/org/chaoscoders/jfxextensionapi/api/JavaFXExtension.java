@@ -16,7 +16,7 @@ public abstract class JavaFXExtension implements Extensionmethods {
         this.pluginID = pluginID;
     }
 
-    public UUID getPluginID(){
+    public UUID getPluginUUID(){
         return this.pluginID;
     }
 }
