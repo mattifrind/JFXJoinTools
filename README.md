@@ -23,7 +23,12 @@ Willkommen zu unserem JavaFX Learning Repository. Der Setup ist nicht ganz so tr
     - das Programm startet nun über den grünen Pfeil
 > ***Wichtig***: Das Sample Projekt soll nicht verändert werden. Wenn ihr ein eigenes Projekt beginnen wollt, macht bei "Eigenes Projekt erstellen" weiter.
 ### Eigenes Projekt erstellen
-- 
+- JoinTools_Sample auswählen → Strg + C → JFXJoinTools auswählen → Strg + V → Neuen Namen vergeben (z.B. JoinTools_Calculator) → Ok
+- Add Files to Git "ok"
+- File → Project Structure → Modules
+    - JoinTools_Sample auswählen und duplizieren (kleines Icon drüber) → Module Name "JoinTools_Calculator" angeben (wie der Ordnername)
+    - JoinTools_Calculator auswählen → "src" Ordner auswählen und als "Sources" festlegen
+- Run Configurations wieder korrigieren (VM Options und Namen anpassen) → siehe Getting Started
 ## Wichtige Dateien im JoinTools_Sample
 - Main.java - startet die Anwendung standalone. Lädt das Layout aus der Main.fxml. (braucht ihr nix tun)
 - ExtensionMain.java - startet die Anwendung als Plugin (getRoot(), getSettings(), getInfo() entsprechend anpassen)
