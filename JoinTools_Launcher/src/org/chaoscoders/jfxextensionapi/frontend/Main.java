@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -13,7 +14,9 @@ import org.chaoscoders.jfxextensionapi.api.util.GuiManager;
 import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
 import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
+import org.chaoscoders.jfxextensionapi.frontend.util.TempFileManager;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
@@ -42,7 +45,7 @@ public class Main extends Application {
     }
 
     private void initInstances(){
-        tmpdir = System.getProperty("java.io.tmpdir");
+        tmpdir = System.getProperty("java.io.tmpdir") + "\\JoinTools";
         pluginFolder = "../plugins";
         GuiManager.initIcons();
         GuiManager.poweroffscreen = new ShutDownMenu();
@@ -51,14 +54,15 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        //TODO: deleteTmpFiles
+
         initInstances();
+        TempFileManager.initTmpDirs();
 
         ExtensionLoader.loadPlugins();
 
         GuiManager.customMenubar = new CustomMenubar(Screen.getPrimary().getVisualBounds().getWidth());
 
-        GuiManager.home = new AnchorPane();
+        GuiManager.home = new VBox(ExtensionLoader.getExtensionWidget(ExtensionLoader.getPlugins().get(0).getPluginID()));
 
         GuiManager.root = new BorderPane();
         GuiManager.showHomeScreen();
@@ -72,6 +76,6 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
-        //TODO: deleteTmpFiles
+        TempFileManager.cleanUp();
     }
 }

@@ -6,6 +6,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import org.chaoscoders.jfxextensionapi.api.settings.SettingManager;
 import org.chaoscoders.jfxextensionapi.frontend.Main;
+import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
 import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
 
@@ -44,7 +45,7 @@ public class GuiManager {
 
     public static void openPlugin(UUID pluginID){
         customMenubar.setHome(false);
-        root.setCenter(Objects.requireNonNull(Main.resolvePluginID(pluginID)).getRoot());
+        root.setCenter(Objects.requireNonNull(ExtensionLoader.resolvePluginID(pluginID)).getRoot());
     }
 
 

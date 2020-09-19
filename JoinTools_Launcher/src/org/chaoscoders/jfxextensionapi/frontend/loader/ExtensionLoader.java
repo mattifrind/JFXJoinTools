@@ -8,7 +8,9 @@ import javafx.stage.Screen;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
+import org.chaoscoders.jfxextensionapi.api.util.CustomFXMLLoader;
 import org.chaoscoders.jfxextensionapi.frontend.Main;
+import org.chaoscoders.jfxextensionapi.frontend.util.TempFileManager;
 import org.chaoscoders.jfxextensionapi.frontend.util.Widget;
 import org.chaoscoders.jfxextensionapi.frontend.util.exceptions.InvalidPluginYMLException;
 
@@ -44,6 +46,10 @@ public class ExtensionLoader {
 
 
     //public methods
+    public static ArrayList<JavaFXExtension> getPlugins(){
+        return plugins;
+    }
+
     public static Settings getExtensionSettings(UUID pluginUUID){
         init();
         return extensionSettings.get(pluginUUID);
@@ -74,6 +80,10 @@ public class ExtensionLoader {
         return extensionWidgets;
     }
 
+    public static Widget getExtensionWidget(UUID pluginUUID){
+        return extensionWidgets.get(pluginUUID);
+    }
+
     public static void loadPlugins(){
         init();
 
@@ -81,6 +91,7 @@ public class ExtensionLoader {
             if (jar.isFile() && jar.getName().endsWith(".jar")) {
                 try {
                     UUID pluginUUID = UUID.randomUUID();
+                    TempFileManager.initTmpDirs(pluginUUID);
 
                     String path = ConfigLoader.getConfigParameter(jar.toURL(), "main", pluginUUID);
 
@@ -101,6 +112,9 @@ public class ExtensionLoader {
                         extensionConfigs.put(pluginUUID, ConfigLoader.getConfigContent(jar, pluginUUID));
                         extensionMainPages.put(pluginUUID, (Node) rootMethod.invoke(extension));
                         extensionWidgets.put(pluginUUID, new Widget(pluginUUID));
+
+                        CustomFXMLLoader.getExtensionIcon(jar.toURL(),
+                                ConfigLoader.getConfigParameter(jar.toURL(), "layout", pluginUUID), pluginUUID);
 
                         ExtensionLoader.plugins.add(extension);
                     }
@@ -151,17 +165,13 @@ public class ExtensionLoader {
         }
     }
 
-
     private static Image getExtensionIcon(URL jar, UUID pluginUUID){
         //Icon aus jar lesen ansonsten standard icon aus res ordner zurückgeben
         String path = "";
         try{
-            ZipInputStream zip = new ZipInputStream(jar.openStream());
-            while(true) {
-                ZipEntry e = zip.getNextEntry();
-                if (e == null) {
-                    break;
-                }
+            ZipInputStream zipIs = new ZipInputStream(jar.openStream());
+            ZipEntry e;
+            while((e = zipIs.getNextEntry()) != null) {
                 String name = e.getName();
                 ZipFile zf = new ZipFile(jar.getFile());
                 String iconname = jar.toString().substring(jar.toString().lastIndexOf("/") + 1, jar.toString().length() - 4);

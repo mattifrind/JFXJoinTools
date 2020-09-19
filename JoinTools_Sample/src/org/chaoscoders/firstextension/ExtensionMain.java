@@ -8,12 +8,14 @@ import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 
+import java.util.UUID;
+
 
 @SuppressWarnings("ALL")
 public class ExtensionMain extends JavaFXExtension {
 
     @SuppressWarnings("unused")
-    public ExtensionMain(int pluginID) {
+    public ExtensionMain(UUID pluginID) {
         super(pluginID);
     }
 
@@ -29,6 +31,6 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public ExtensionInfo getInfo() {
-        return new ExtensionInfo("Luca", "", "", "", "", "Test description");
+        return new ExtensionInfo("Luca", "", "Sample", "Dolle Sache", "", "Test description");
     }
 }

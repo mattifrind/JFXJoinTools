@@ -6,6 +6,7 @@ import org.chaoscoders.jfxextensionapi.frontend.util.exceptions.InvalidPluginYML
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,9 +55,7 @@ public class ConfigLoader {
 
         init();
 
-
         String result = "";
-
         ZipInputStream zipIs;
         try {
             zipIs = new ZipInputStream(jar.openStream());
@@ -67,7 +66,9 @@ public class ConfigLoader {
                 InputStream is = zf.getInputStream(e);
                 if(name.equalsIgnoreCase("plugin.yml")){
                     //plugin.yml gefunden
-                    Files.copy(is, Paths.get(Main.getTmpdir(pluginUUID) + "\\tmp.txt"));
+                    Path temp = Paths.get(Main.getTmpdir(pluginUUID) + "\\tmp.txt");
+                    Files.createDirectories(temp.getParent());
+                    Files.copy(is, temp);
 
                     BufferedReader br = new BufferedReader(new FileReader(new File(Main.getTmpdir(pluginUUID) + "\\tmp.txt")));
                     String line = null;

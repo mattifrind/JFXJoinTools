@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="JFX_Extension_sample:jar">
-    <output-path>$PROJECT_DIR$/../../../../Dokumente/PluginFolder</output-path>
-    <root id="archive" name="JFX_Extension_smaple.jar">
-      <element id="module-output" name="JoinTools_Sample" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../APIs/openjfx-13.0.1_windows-x64_bin-sdk/javafx-sdk-13.0.1/lib/src.zip" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
