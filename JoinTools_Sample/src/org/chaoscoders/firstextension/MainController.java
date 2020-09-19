@@ -13,6 +13,10 @@ public class MainController {
 
     //Diese Methode wird von dem im FXML definierten Button (btnMain) aufgerufen
     public void printToLabel(ActionEvent actionEvent) {
-        lblOutput.setText("Du hast " + tfMain.getText() + " eingegeben.");
+        lblOutput.setText(getLabelText(tfMain.getText()));
+    }
+
+    public String getLabelText(String inputString) {
+        return "Du hast \"" + inputString + "\" eingegeben.";
     }
 }
