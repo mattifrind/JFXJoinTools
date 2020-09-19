@@ -14,8 +14,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
 import org.chaoscoders.jfxextensionapi.api.util.GuiManager;
+import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 
-public class Widget extends Parent implements Cloneable {
+import java.util.UUID;
+
+public class Widget extends Parent {
 
     private Rectangle background;
     private Rectangle backgroundHighlighter;
@@ -26,20 +29,125 @@ public class Widget extends Parent implements Cloneable {
     private Label settingsLabel;
     private Label infoLabel;
     private ImageView icon;
-    private String tooltip;
-    private String name;
+    private String toolTip;
+    private String extensionName;
     private Color textColor;
     private int layoutX;
     private int layoutY;
-    private int widgetID;
+
+    private UUID widgetID;
 
 
+    public Widget(int layoutX, int layoutY, String extensionName, Image iconImage, String toolTip,
+                  Color colorHighlighter, Color backgroundColor, Color textColor, UUID widgetID) {
+        this.widgetID = widgetID;
+        this.layoutX = layoutX;
+        this.layoutY = layoutY;
+        this.backgroundColor = backgroundColor;
+        this.toolTip = toolTip;
+        this.extensionName = extensionName;
+        this.textColor = textColor;
+        this.icon = new ImageView(iconImage);
+        this.colorHighlighter = colorHighlighter;
 
-    @Override
-    public Object clone() {
-        Widget w = new Widget(this.layoutX, this.layoutY, this.extensionNameLabel.getText(), icon.getImage()
-        , this.tooltip, this.colorHighlighter, this.backgroundColor, this.textColor, this.widgetID);
-        return w;
+        initBackground();
+        initBackgroundHighlighter();
+
+        initExtensionNameLabel();
+        initInfoLabel();
+        initSettingsLabel();
+        initIcon();
+
+        getChildren().addAll(background, backgroundHighlighter, extensionNameLabel, icon, infoLabel, settingsLabel);
+
+        this.setOnMouseEntered(event -> {
+            performOnEnter();
+        });
+
+        this.setOnMouseExited(event -> {
+            performonExit();
+        });
+    }
+
+    public Widget(UUID pluginUUID){
+        this(20, 50, ExtensionLoader.getExtensionInfo(pluginUUID).getName(),
+                ExtensionLoader.getExtensionIcon(pluginUUID),
+                ExtensionLoader.getExtensionInfo(pluginUUID).getTooltip(),
+                Color.valueOf("#161616"), Color.valueOf("#444444"),
+                Color.valueOf("#ffffff"), pluginUUID);
+    }
+
+    private void initBackgroundHighlighter() {
+        backgroundHighlighterSlider = new Rectangle(170, 0);
+        backgroundHighlighter = new Rectangle(170, 80);
+        backgroundHighlighter.setFill(colorHighlighter);
+        backgroundHighlighter.setLayoutX(layoutX);
+        backgroundHighlighter.setLayoutY(layoutY);
+        backgroundHighlighter.setArcHeight(8);
+        backgroundHighlighter.setArcWidth(8);
+        backgroundHighlighter.setClip(backgroundHighlighterSlider);
+        backgroundHighlighter.setCursor(Cursor.HAND);
+
+        this.backgroundHighlighterSlider.setOnMouseClicked(event -> {
+            GuiManager.openPlugin(widgetID);
+        });
+    }
+
+    private void initIcon() {
+        icon.setFitWidth(64);
+        icon.setFitHeight(64);
+        icon.setLayoutX(layoutX + 53);
+        icon.setLayoutY(layoutY + 80);
+    }
+
+    private void initSettingsLabel() {
+        settingsLabel = new Label("Settings");
+        settingsLabel.setTextFill(textColor);
+        settingsLabel.setAlignment(Pos.CENTER);
+        settingsLabel.setTextAlignment(TextAlignment.CENTER);
+        settingsLabel.setPrefSize(170, 17);
+        settingsLabel.setLayoutX(layoutX);
+        settingsLabel.setLayoutY(layoutY + 190);
+        settingsLabel.setVisible(false);
+        settingsLabel.setCursor(Cursor.HAND);
+
+        this.settingsLabel.setOnMouseEntered(event -> {
+            this.settingsLabel.setUnderline(true);
+        });
+
+        this.settingsLabel.setOnMouseExited(event -> {
+            this.settingsLabel.setUnderline(false);
+        });
+
+        this.settingsLabel.setOnMouseClicked(event -> {
+            GuiManager.openSettingsPage(widgetID);
+        });
+
+        this.infoLabel.setOnMouseClicked(event -> {
+            GuiManager.openInfoPage(widgetID);
+        });
+    }
+
+    private void initInfoLabel() {
+        infoLabel = new Label("Info");
+        infoLabel.setTextFill(textColor);
+        infoLabel.setAlignment(Pos.CENTER);
+        infoLabel.setTextAlignment(TextAlignment.CENTER);
+        infoLabel.setPrefSize(170, 17);
+        infoLabel.setLayoutX(layoutX);
+        infoLabel.setLayoutY(layoutY + 170);
+        infoLabel.setVisible(false);
+        infoLabel.setCursor(Cursor.HAND);
+
+        //TODO: underline animieren - vllt zwei linien die nach links
+        // und rechts sich ausdehnen und unter dem label liegen?
+        this.infoLabel.setOnMouseEntered(event -> {
+            this.infoLabel.setUnderline(true);
+        });
+
+        this.infoLabel.setOnMouseExited(event -> {
+            this.infoLabel.setUnderline(false);
+        });
     }
 
     private void performOnEnter(){
@@ -105,16 +213,7 @@ public class Widget extends Parent implements Cloneable {
         infoLabel.setVisible(false);
     }
 
-    public Widget(int layoutX, int layoutY, String extensionName, Image iconImage, String toolTip, Color hightlight, Color backgroundColor, Color textColor, int widgetID) {
-        this.widgetID = widgetID;
-        this.layoutX = layoutX;
-        this.layoutY = layoutY;
-        this.backgroundColor = backgroundColor;
-        this.tooltip = toolTip;
-        this.name = extensionName;
-        this.textColor = textColor;
-
-        colorHighlighter = hightlight;
+    private void initBackground(){
         background = new Rectangle(170, 220);
         background.setFill(Color.web(backgroundColor.toString(), 0.8));
         background.setLayoutX(layoutX);
@@ -123,18 +222,10 @@ public class Widget extends Parent implements Cloneable {
         background.setArcWidth(8);
         background.setStrokeWidth(0);
 
-        backgroundHighlighterSlider = new Rectangle(170, 0);
+    }
 
-        backgroundHighlighter = new Rectangle(170, 80);
-        backgroundHighlighter.setFill(colorHighlighter);
-        backgroundHighlighter.setLayoutX(layoutX);
-        backgroundHighlighter.setLayoutY(layoutY);
-        backgroundHighlighter.setArcHeight(8);
-        backgroundHighlighter.setArcWidth(8);
-        backgroundHighlighter.setClip(backgroundHighlighterSlider);
-        backgroundHighlighter.setCursor(Cursor.HAND);
-
-        extensionNameLabel = new Label(extensionName);
+    private void initExtensionNameLabel(){
+        extensionNameLabel = new Label(this.extensionName);
         extensionNameLabel.setTextFill(textColor);
         extensionNameLabel.setAlignment(Pos.CENTER);
         extensionNameLabel.setTextAlignment(TextAlignment.CENTER);
@@ -143,80 +234,12 @@ public class Widget extends Parent implements Cloneable {
         extensionNameLabel.setLayoutX(layoutX);
         extensionNameLabel.setLayoutY(layoutY + 12);
         extensionNameLabel.setCursor(Cursor.HAND);
-
-        Tooltip infoTT = new Tooltip(toolTip);
+        Tooltip infoTT = new Tooltip(this.toolTip);
         this.extensionNameLabel.setTooltip(infoTT);
-
-        infoLabel = new Label("Info");
-        infoLabel.setTextFill(textColor);
-        infoLabel.setAlignment(Pos.CENTER);
-        infoLabel.setTextAlignment(TextAlignment.CENTER);
-        infoLabel.setPrefSize(170, 17);
-        infoLabel.setLayoutX(layoutX);
-        infoLabel.setLayoutY(layoutY + 170);
-        infoLabel.setVisible(false);
-        infoLabel.setCursor(Cursor.HAND);
-
-        settingsLabel = new Label("Settings");
-        settingsLabel.setTextFill(textColor);
-        settingsLabel.setAlignment(Pos.CENTER);
-        settingsLabel.setTextAlignment(TextAlignment.CENTER);
-        settingsLabel.setPrefSize(170, 17);
-        settingsLabel.setLayoutX(layoutX);
-        settingsLabel.setLayoutY(layoutY + 190);
-        settingsLabel.setVisible(false);
-        settingsLabel.setCursor(Cursor.HAND);
-
-        icon = new ImageView(iconImage);
-        icon.setFitWidth(64);
-        icon.setFitHeight(64);
-        icon.setLayoutX(layoutX + 53);
-        icon.setLayoutY(layoutY + 80);
-
-        getChildren().addAll(background, backgroundHighlighter, extensionNameLabel, icon, infoLabel, settingsLabel);
-
-        //TODO: underline animieren - vllt zwei linien die nach links
-        // und rechts sich ausdehnen und unter dem label liegen?
-        infoLabel.setOnMouseEntered(event -> {
-            infoLabel.setUnderline(true);
-        });
-
-        infoLabel.setOnMouseExited(event -> {
-            infoLabel.setUnderline(false);
-        });
-
-        settingsLabel.setOnMouseEntered(event -> {
-            settingsLabel.setUnderline(true);
-        });
-
-        settingsLabel.setOnMouseExited(event -> {
-            settingsLabel.setUnderline(false);
-        });
-
-        settingsLabel.setOnMouseClicked(event -> {
-            GuiManager.openSettingsPage(widgetID);
-        });
-
-        infoLabel.setOnMouseClicked(event -> {
-            GuiManager.openInfoPage(widgetID);
-        });
-
-        this.setOnMouseEntered(event -> {
-            performOnEnter();
-        });
-
-        this.setOnMouseExited(event -> {
-            performonExit();
-        });
-
-        this.backgroundHighlighterSlider.setOnMouseClicked(event -> {
-            GuiManager.openPlugin(widgetID);
-        });
 
         this.extensionNameLabel.setOnMouseClicked(event -> {
             GuiManager.openPlugin(widgetID);
         });
-
     }
 
 }

@@ -6,10 +6,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import org.chaoscoders.jfxextensionapi.api.settings.SettingManager;
 import org.chaoscoders.jfxextensionapi.frontend.Main;
+import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
 import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class GuiManager {
 
@@ -41,18 +43,18 @@ public class GuiManager {
         root.setCenter(content);
     }
 
-    public static void openPlugin(int pluginID){
+    public static void openPlugin(UUID pluginID){
         customMenubar.setHome(false);
-        root.setCenter(Objects.requireNonNull(Main.resolvePluginID(pluginID)).getRoot());
+        root.setCenter(Objects.requireNonNull(ExtensionLoader.resolvePluginID(pluginID)).getRoot());
     }
 
 
-    public static void openSettingsPage(int pluginID){
+    public static void openSettingsPage(UUID pluginID){
         customMenubar.setHome(false);
         GuiManager.root.setCenter(SettingManager.getSettingsPage(pluginID));
     }
 
-    public static void openInfoPage(int pluginID){
+    public static void openInfoPage(UUID pluginID){
         //TODO: öffnen einer seite abhängig von der pluginID
         customMenubar.setHome(false);
         GuiManager.root.setCenter(new AnchorPane());
