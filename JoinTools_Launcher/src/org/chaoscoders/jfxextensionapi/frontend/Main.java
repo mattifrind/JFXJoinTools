@@ -46,7 +46,7 @@ public class Main extends Application {
 
     private void initInstances(){
         tmpdir = System.getProperty("java.io.tmpdir") + "\\JoinTools";
-        pluginFolder = "../plugins";
+        pluginFolder = "./plugins";
         GuiManager.initIcons();
         GuiManager.poweroffscreen = new ShutDownMenu();
     }

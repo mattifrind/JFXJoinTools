@@ -87,6 +87,10 @@ public class ExtensionLoader {
     public static void loadPlugins(){
         init();
 
+        File plDir = new File(Main.pluginFolder);
+        if(! plDir.exists()) {
+            plDir.mkdirs();
+        }
         for(File jar : Objects.requireNonNull((new File(Main.pluginFolder)).listFiles())){
             if (jar.isFile() && jar.getName().endsWith(".jar")) {
                 try {
