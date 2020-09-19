@@ -11,12 +11,12 @@ Willkommen zu unserem JavaFX Learning Repository. Der Setup ist nicht ganz so tr
 - Neues Projekt "From Version Control" → GitHub Account auswählen → JFXJoinTools auswählen → clone
 - File → Project Structure → Libraries → lib löschen → + → JavaFX lib Ordner angeben → Launcher und Sample auswählen → ok
 - JoinTools_Launcher auswählen 
-    - runterklicken nach src/org.chaoscoders.jfxextensionapi/frontend → Rechtsklick auf Main → Run Main
+    - runterklicken nach src/org.chaoscoders.jfxextensionapi/frontend → Rechtsklick auf Main → Run Main.main()
     - Rechts oben auf "Main" klicken (zwischen grünem Hammer und Pfeil) → Edit Configurations
         - Unter VM Options: --module-path "path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml
         - Ganz oben Namen ändern (z.B. "Main Launcher")
     - das Programm startet nun über den grünen Pfeil
-- JoinTools_Sample auswählen → runterklicken nach src/org.chaoscoders.firstextension → Rechtsklick auf Main → Run Main
+- JoinTools_Sample auswählen → runterklicken nach src/org.chaoscoders.firstextension → Rechtsklick auf Main → Run Main.main()
     - Rechts oben auf "Main" klicken (zwischen grünem Hammer und Pfeil) → Edit Configurations
         - Unter VM Options: --module-path "path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml
         - Ganz oben Namen ändern (z.B. "Main Sample")
