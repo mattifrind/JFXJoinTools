@@ -178,7 +178,6 @@ public class ExtensionLoader {
                 String name = e.getName();
                 ZipFile zf = new ZipFile(jar.getFile());
                 String iconname = jar.toString().substring(jar.toString().lastIndexOf("/") + 1, jar.toString().length() - 4);
-                //TODO: ...
                 path = Main.getTmpdir(pluginUUID) + "\\icon_" + iconname + ".png";
                 InputStream is = zf.getInputStream(e);
                 if (name.equalsIgnoreCase("icon.png")) {

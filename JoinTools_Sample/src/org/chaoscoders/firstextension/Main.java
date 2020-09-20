@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -12,7 +13,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //lädt das root-Objekt aus der FXML (mit allem was so drin ist)
-        Parent root = FXMLLoader.load(getClass().getResource("layout/Main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layout/Main.fxml"));
+        fxmlLoader.setController(new MainController());
+        fxmlLoader.setRoot(new AnchorPane());
+        Parent root = fxmlLoader.load();
 
         primaryStage.setTitle("Hello World");
 

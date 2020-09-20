@@ -21,10 +21,8 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public Node getRoot() {
-        SettingManager.saveSetting(null, null);
-        return CustomFXMLLoader.loadFXMLFile("Main.fxml", this, new AnchorPane(),  new MainController());
-
-        //return new HBox(new Button("Klick mich!"), new TextField("Eingabe..."));
+        return CustomFXMLLoader.loadFXMLFile("Main.fxml", this, new AnchorPane(), new MainController());
+        //return CustomFXMLLoader.loadFXMLFile("test2.fxml", this, new AnchorPane());
     }
 
     @Override
