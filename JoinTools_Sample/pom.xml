@@ -55,6 +55,8 @@
                 <version>3.8.0</version>
                 <configuration>
                     <verbose>true</verbose>
+                    <source>15</source>
+                    <target>15</target>
                 </configuration>
             </plugin>
             <plugin>
