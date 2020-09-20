@@ -2,13 +2,12 @@ package org.chaoscoders.jfxextensionapi.api.util;
 
 import javafx.scene.Node;
 import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 import org.chaoscoders.jfxextensionapi.api.settings.SettingManager;
 import org.chaoscoders.jfxextensionapi.frontend.Main;
 import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
-import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -18,7 +17,7 @@ public class GuiManager {
     public static BorderPane root;
 
     public static Node home;
-    public static Node poweroffscreen;
+    public static Node powerOffScreen;
     public static Node lastScreen;
     public static CustomMenubar customMenubar;
 
@@ -34,7 +33,6 @@ public class GuiManager {
         image_home = new Image(Main.class.getResourceAsStream("/home.png"));
         image_power = new Image(Main.class.getResourceAsStream("/power.png"));
         image_restart = new Image(Main.class.getResourceAsStream("/r.png"));
-
     }
 
     public static void changeGuiFrame(Node content){
@@ -54,10 +52,10 @@ public class GuiManager {
         GuiManager.root.setCenter(SettingManager.getSettingsPage(pluginID));
     }
 
-    public static void openInfoPage(UUID pluginID){
-        //TODO: öffnen einer seite abhängig von der pluginID
+    public static void openInfoPage(UUID pluginUUID){
         customMenubar.setHome(false);
-        GuiManager.root.setCenter(new AnchorPane());
+        ExtensionInfo extInfo = ExtensionLoader.getExtensionInfo(pluginUUID);
+        GuiManager.root.setCenter(extInfo.getInfoPage());
     }
 
     public static void showHomeScreen(){
@@ -70,6 +68,6 @@ public class GuiManager {
     public static void showPowerOffScreen(){
         lastScreen = root.getCenter();
         customMenubar.setHome(false);
-        root.setCenter(GuiManager.poweroffscreen);
+        root.setCenter(GuiManager.powerOffScreen);
     }
 }

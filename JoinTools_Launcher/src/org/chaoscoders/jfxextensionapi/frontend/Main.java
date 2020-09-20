@@ -18,7 +18,6 @@ import java.util.UUID;
 
 public class Main extends Application {
 
-    //TODO: Layout pfad in plugin.yml hinzufügen, die dateien daraus in einen TMP Ordner hinzufügen
 
     public static String pluginFolder;
     private static String tmpdir;
@@ -43,7 +42,7 @@ public class Main extends Application {
         tmpdir = System.getProperty("java.io.tmpdir") + "\\JoinTools";
         pluginFolder = "./plugins";
         GuiManager.initIcons();
-        GuiManager.poweroffscreen = new ShutDownMenu();
+        GuiManager.powerOffScreen = new ShutDownMenu();
     }
 
     @Override

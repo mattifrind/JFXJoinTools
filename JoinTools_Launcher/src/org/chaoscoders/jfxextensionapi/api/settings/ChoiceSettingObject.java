@@ -24,8 +24,13 @@ public class ChoiceSettingObject extends SettingObject {
         this.options.remove(option);
     }
 
-    public String getSelected() {
+    public Object getValue() {
         return selected;
+    }
+
+    @Override
+    public void setValue(Object value) {
+        
     }
 
     public void setSelected(String selected) {

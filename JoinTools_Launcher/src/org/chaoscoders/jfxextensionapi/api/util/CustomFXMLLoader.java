@@ -44,7 +44,9 @@ public class CustomFXMLLoader {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(new File(path).toURL());
             fxmlLoader.setRoot(rootPane);
-            fxmlLoader.setController(controller);
+            if(controller != null){
+                fxmlLoader.setController(controller);
+            }
             result = fxmlLoader.load();
 
         } catch (Exception e) {
@@ -53,8 +55,12 @@ public class CustomFXMLLoader {
         return result;
     }
 
-    public static Node getFxmlFile(String name, JavaFXExtension root, Object rootPane, Object controller){
+    public static Node loadFXMLFile(String name, JavaFXExtension root, Object rootPane, Object controller){
         return new CustomFXMLLoader().returnFXMLFile(name, root, rootPane, controller);
+    }
+
+    public static Node loadFXMLFile(String name, JavaFXExtension root, Object rootPane){
+        return new CustomFXMLLoader().returnFXMLFile(name, root, rootPane, null);
     }
 
     public static void loadFXMLFiles(URL jar, String layoutPath, UUID pluginUUID){

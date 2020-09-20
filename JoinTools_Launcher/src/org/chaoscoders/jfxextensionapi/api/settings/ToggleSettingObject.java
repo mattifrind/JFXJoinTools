@@ -8,6 +8,16 @@ public class ToggleSettingObject extends SettingObject{
         super(settingName, description, orderNo);
     }
 
+    @Override
+    public Object getValue() {
+        return null;
+    }
+
+    @Override
+    public void setValue(Object value) {
+
+    }
+
 
     //TODO: ...
 }

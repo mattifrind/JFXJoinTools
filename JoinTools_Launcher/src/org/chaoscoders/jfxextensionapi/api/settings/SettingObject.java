@@ -12,6 +12,10 @@ public abstract class SettingObject {
         this.orderNo = orderNo;
     }
 
+    public abstract Object getValue();
+
+    public abstract void setValue(Object value);
+
     public int getOrderNo() {
         return orderNo;
     }
