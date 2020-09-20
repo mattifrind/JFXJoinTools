@@ -88,7 +88,6 @@ public class ExtensionLoader {
         if(! plDir.exists()) {
             plDir.mkdirs();
         }
-
         for(File jar : Objects.requireNonNull((new File(Main.pluginFolder)).listFiles())){
             if (jar.isFile() && jar.getName().endsWith(".jar")) {
                 try {
@@ -101,7 +100,7 @@ public class ExtensionLoader {
                     Class<?> constructorParam = UUID.class;
 
                     CustomFXMLLoader.loadFXMLFiles(jar.toURL(),
-                            ConfigLoader.getConfigParameter(jar.toURL(), "layout", pluginUUID), pluginUUID);
+                            ConfigLoader.getConfigParameter(jar.toURL(), "", pluginUUID), pluginUUID);
 
 
                     if(pluginMainClass.getConstructor(constructorParam).newInstance(pluginUUID) instanceof JavaFXExtension){
@@ -202,7 +201,6 @@ public class ExtensionLoader {
     }
 
     private static Class<?> getClassFromPath(File jar, String classpath) throws InvalidPluginYMLException {
-
         try{
             ClassLoader loader = URLClassLoader.newInstance(
                     new URL[] { jar.toURL() },

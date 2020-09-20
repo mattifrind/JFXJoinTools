@@ -28,11 +28,11 @@ public class GuiManager {
     public static Image image_home;
 
     public static void initIcons(){
-        image_back = new Image(Main.class.getResourceAsStream("/back.png"));
-        image_shutdown = new Image(Main.class.getResourceAsStream("/shutdown.png"));
-        image_home = new Image(Main.class.getResourceAsStream("/home.png"));
-        image_power = new Image(Main.class.getResourceAsStream("/power.png"));
-        image_restart = new Image(Main.class.getResourceAsStream("/r.png"));
+        image_back = new Image("back.png");
+        image_shutdown = new Image("shutdown.png");
+        image_home = new Image("home.png");
+        image_power = new Image("power.png");
+        image_restart = new Image("r.png");
     }
 
     public static void changeGuiFrame(Node content){

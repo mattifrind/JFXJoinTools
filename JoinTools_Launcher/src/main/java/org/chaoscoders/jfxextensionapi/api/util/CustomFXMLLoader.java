@@ -70,14 +70,10 @@ public class CustomFXMLLoader {
             ZipInputStream zipIs = new ZipInputStream(jar.openStream());
             ZipEntry e;
             while((e = zipIs.getNextEntry()) != null) {
-
                 ZipFile zf = new ZipFile(jar.getFile());
-                if(e.getName().contains(layoutPath.replace(".", "/"))
-                        && e.getName().endsWith(".fxml")){
-                    String name = e.getName().substring(e.getName().lastIndexOf("/"));
-                    path = Main.getTmpdir(pluginUUID) + "\\" + name.substring(1);
-                    //path = System.getProperty("java.io.tmpdir") + "JoinTools\\" + pluginUUID.toString() + "\\" + name.substring(1);
-                    System.out.println(path);
+                if(e.getName().endsWith(".fxml")) {
+                    String name = e.getName();
+                    path = Paths.get(Main.getTmpdir(pluginUUID), name).toString();
                     File dir = new File(path);
                     (new File(dir.getParent())).mkdirs();
                     InputStream is = zf.getInputStream(e);

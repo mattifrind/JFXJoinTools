@@ -61,10 +61,10 @@ public class ConfigLoader {
             zipIs = new ZipInputStream(jar.openStream());
             ZipEntry e;
             while((e = zipIs.getNextEntry()) != null) {
-                String name = e.getName();
+                String entryName = e.getName();
                 ZipFile zf = new ZipFile(jar.getFile());
                 InputStream is = zf.getInputStream(e);
-                if(name.equalsIgnoreCase("plugin.yml")){
+                if(entryName.equalsIgnoreCase("plugin.yml")) {
                     //plugin.yml gefunden
                     Path temp = Paths.get(Main.getTmpdir(pluginUUID) + "\\tmp.txt");
                     Files.createDirectories(temp.getParent());
