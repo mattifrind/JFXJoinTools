@@ -22,7 +22,6 @@ public class ExtensionMain extends JavaFXExtension {
     @Override
     public Node getRoot() {
         return CustomFXMLLoader.loadFXMLFile("Main.fxml", this, new AnchorPane(), new MainController());
-        //return CustomFXMLLoader.loadFXMLFile("test2.fxml", this, new AnchorPane());
     }
 
     @Override
