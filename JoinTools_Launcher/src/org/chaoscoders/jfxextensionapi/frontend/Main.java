@@ -13,8 +13,11 @@ import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
 import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
 import org.chaoscoders.jfxextensionapi.frontend.util.TempFileManager;
+import org.chaoscoders.jfxextensionapi.frontend.util.Widget;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class Main extends Application {
 
@@ -47,21 +50,25 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
-
         initInstances();
         TempFileManager.initTmpDirs();
-
         ExtensionLoader.loadPlugins();
 
         GuiManager.customMenubar = new CustomMenubar(Screen.getPrimary().getVisualBounds().getWidth());
 
-        GuiManager.home = new VBox(ExtensionLoader.getExtensionWidget(ExtensionLoader.getPlugins().get(0).getPluginUUID()));
+        //loads all plugin widgets into the home node
+        List<Widget> widgets = ExtensionLoader.getPlugins().stream()
+                .map(plugin ->
+                        ExtensionLoader.getExtensionWidget(plugin.getPluginUUID()))
+                .collect(Collectors.toList());
+        VBox widgetsContainer = new VBox();
+        widgetsContainer.getChildren().addAll(widgets);
+        GuiManager.home = widgetsContainer;
 
         GuiManager.root = new BorderPane();
         GuiManager.showHomeScreen();
         GuiManager.root.setTop(GuiManager.customMenubar);
-        primaryStage.setTitle("Application Hub");
+        primaryStage.setTitle("JFXJoinTools");
         primaryStage.setMaximized(true);
         primaryStage.setScene(new Scene(GuiManager.root, 720, 540));
         primaryStage.show();
