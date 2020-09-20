@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="JoinTools_Launcher:jar">
+    <output-path>$PROJECT_DIR$/CompileOutput</output-path>
+    <root id="archive" name="JoinTools_Launcher.jar">
+      <element id="module-output" name="JoinTools_Launcher" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../APIs/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/src.zip" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

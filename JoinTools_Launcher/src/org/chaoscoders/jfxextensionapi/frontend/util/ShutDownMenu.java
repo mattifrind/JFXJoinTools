@@ -3,6 +3,7 @@ package org.chaoscoders.jfxextensionapi.frontend.util;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -43,7 +44,8 @@ public class ShutDownMenu extends Parent {
         ImageView restartImg = new ImageView(GuiManager.image_restart);
         restartImg.setCursor(Cursor.HAND);
         restartImg.setOnMouseClicked(event -> {
-            //TODO.... restart?
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Feature noch nicht verfügbar!");
+            alert.show();
         });
         hBox.getChildren().addAll(backImg, shutdownImg, restartImg);
 

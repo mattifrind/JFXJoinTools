@@ -1,12 +1,12 @@
 package org.chaoscoders.firstextension;
 
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.AnchorPane;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
+import org.chaoscoders.jfxextensionapi.api.settings.SettingManager;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
+import org.chaoscoders.jfxextensionapi.api.util.CustomFXMLLoader;
 
 import java.util.UUID;
 
@@ -21,7 +21,8 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public Node getRoot() {
-        return new HBox(new Button("Klick mich!"), new TextField("Eingabe..."));
+        return CustomFXMLLoader.loadFXMLFile("Main.fxml", this, new AnchorPane(), new MainController());
+        //return CustomFXMLLoader.loadFXMLFile("test2.fxml", this, new AnchorPane());
     }
 
     @Override
@@ -31,6 +32,6 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public ExtensionInfo getInfo() {
-        return new ExtensionInfo("Luca", "", "Sample", "Dolle Sache", "", "Test description");
+        return new ExtensionInfo("Luca", "1.0", "Sample", "Dolle Sache","Test description");
     }
 }

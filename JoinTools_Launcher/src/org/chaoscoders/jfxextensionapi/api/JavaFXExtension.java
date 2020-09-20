@@ -1,7 +1,6 @@
 package org.chaoscoders.jfxextensionapi.api;
 
 import javafx.scene.Node;
-import javafx.scene.image.Image;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 
@@ -10,14 +9,14 @@ import java.util.UUID;
 
 public abstract class JavaFXExtension implements Extensionmethods {
 
-    private final UUID pluginID;
+    private final UUID pluginUUID;
 
-    public JavaFXExtension(UUID pluginID){
-        this.pluginID = pluginID;
+    public JavaFXExtension(UUID pluginUUID){
+        this.pluginUUID = pluginUUID;
     }
 
-    public UUID getPluginID(){
-        return this.pluginID;
+    public UUID getPluginUUID(){
+        return this.pluginUUID;
     }
 }
 
@@ -40,7 +39,5 @@ interface Extensionmethods {
      * */
     ExtensionInfo getInfo();
 
-
-    //TODO: methode für das hauptfenster und methode für das settingsfenster
 }
 
