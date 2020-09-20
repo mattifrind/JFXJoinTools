@@ -1,4 +1,4 @@
-package org.chaoscoders.firstextension;
+package org.chaoscoders.firstextension.layout;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,14 +11,14 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         //lädt das root-Objekt aus der FXML (mit allem was so drin ist)
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layout/Main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getClassLoader().getResource("Main.fxml"));
         fxmlLoader.setController(new MainController());
         fxmlLoader.setRoot(new AnchorPane());
         Parent root = fxmlLoader.load();
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("JoinTools Sample Plugin");
 
         //bei Bedarf hier den Namen des Icons anpassen
         primaryStage.getIcons().add(new Image("icon.png"));

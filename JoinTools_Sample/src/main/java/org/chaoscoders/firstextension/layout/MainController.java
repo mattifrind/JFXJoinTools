@@ -1,4 +1,4 @@
-package org.chaoscoders.firstextension;
+package org.chaoscoders.firstextension.layout;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
