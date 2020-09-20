@@ -2,6 +2,7 @@ package org.chaoscoders.jfxextensionapi.api.extensioninfo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import org.chaoscoders.jfxextensionapi.frontend.Main;
 import org.chaoscoders.jfxextensionapi.frontend.controller.InfoPageController;
 
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class ExtensionInfo {
     public Node getInfoPage(){
         Node pane = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/InfoPagePreset.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getClassLoader().getResource("InfoPagePreset.fxml"));
             loader.setController(new InfoPageController(this.getVersion(), this.getAuthor(), this.getDescription(), this.getName()));
             pane = loader.load();
         } catch (IOException e) {
