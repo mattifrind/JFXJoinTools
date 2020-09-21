@@ -13,10 +13,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         //lädt das root-Objekt aus der FXML (mit allem was so drin ist)
+
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getClassLoader().getResource("Main.fxml"));
         fxmlLoader.setController(new MainController());
         fxmlLoader.setRoot(new AnchorPane());
         Parent root = fxmlLoader.load();
+
+        //Parent root =  FXMLLoader.load(Main.class.getClassLoader().getResource("Main.fxml"));
 
         primaryStage.setTitle("JoinTools Sample Plugin");
 

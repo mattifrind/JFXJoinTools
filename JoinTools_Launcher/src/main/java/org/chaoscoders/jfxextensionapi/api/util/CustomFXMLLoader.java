@@ -2,17 +2,10 @@ package org.chaoscoders.jfxextensionapi.api.util;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.layout.AnchorPane;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
-import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
-import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 import org.chaoscoders.jfxextensionapi.frontend.Main;
-import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -36,11 +29,12 @@ public class CustomFXMLLoader {
         return extensionLayoutPaths.get(layoutPath);
     }
 
-    private Node returnFXMLFile(String name, JavaFXExtension root, Object rootPane, Object controller){
+    private Node returnFXMLFile(String name, JavaFXExtension root, Node rootPane, Object controller){
         String path;
         Node result = null;
         UUID pluginUUID = root.getPluginUUID();
         path = Main.getTmpdir(pluginUUID) + "\\" + name;
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(new File(path).toURL());
             fxmlLoader.setRoot(rootPane);
@@ -55,11 +49,11 @@ public class CustomFXMLLoader {
         return result;
     }
 
-    public static Node loadFXMLFile(String name, JavaFXExtension root, Object rootPane, Object controller){
+    public static Node loadFXMLFile(String name, JavaFXExtension root, Node rootPane, Object controller){
         return new CustomFXMLLoader().returnFXMLFile(name, root, rootPane, controller);
     }
 
-    public static Node loadFXMLFile(String name, JavaFXExtension root, Object rootPane){
+    public static Node loadFXMLFile(String name, JavaFXExtension root, Node rootPane){
         return new CustomFXMLLoader().returnFXMLFile(name, root, rootPane, null);
     }
 
