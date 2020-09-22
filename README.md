@@ -12,7 +12,9 @@ Willkommen zu unserem JavaFX Learning Repository. Der Setup ist nicht ganz so tr
     - Neues Projekt "From Version Control" → GitHub Account auswählen → JFXJoinTools auswählen → clone
     - Rechts oben Configurations Dropdown öffnen → im Fenster + → Maven auswählen
         - Working directory: ganz rechts auf directory icon (blau) klicken und JFXJoinTools_Launcher auswählen
-        - Command line: javafx:run
+        - Command line: `javafx:run`
+        - Resolve workspace artifacts auswählen
+        - Schritte wiederholen für Debug-Konfiguration, allerdings mit `javafx:run@debug`
         - Schritte wiederholen für JFXJoinTools_Sample
 > ***Wichtig***: Das Sample Projekt soll nicht verändert werden. Wenn ihr ein eigenes Projekt beginnen wollt, macht bei "Eigenes Projekt erstellen" weiter.
 ### Eigenes Plugin/Tool erstellen
