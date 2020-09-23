@@ -12,6 +12,8 @@
     <modules>
         <module>JoinTools_Launcher</module>
         <module>JoinTools_Sample</module>
+        <module>JoinTools_Calculator</module>
+        <module>JoinTools_Converter</module>
     </modules>
 
     <properties>

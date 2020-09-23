@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JoinTools_Launcher" />
+        <module name="JoinTools_Calculator" />
+        <module name="JoinTools_Converter" />
         <module name="JoinTools_Sample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="JFXJoinTools" target="1.5" />
+      <module name="JoinTools_Calculator" target="15" />
+      <module name="JoinTools_Converter" target="15" />
       <module name="JoinTools_Launcher" target="15" />
       <module name="JoinTools_Sample" target="15" />
     </bytecodeTargetLevel>
