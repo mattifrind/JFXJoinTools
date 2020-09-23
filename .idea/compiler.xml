@@ -9,6 +9,7 @@
         <module name="JoinTools_Launcher" />
         <module name="JoinTools_Calculator" />
         <module name="JoinTools_Converter" />
+        <module name="JoinTools_ToDoList" />
         <module name="JoinTools_Sample" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="JoinTools_Converter" target="15" />
       <module name="JoinTools_Launcher" target="15" />
       <module name="JoinTools_Sample" target="15" />
+      <module name="JoinTools_ToDoList" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
