@@ -14,6 +14,7 @@
         <module>JoinTools_Sample</module>
         <module>JoinTools_Calculator</module>
         <module>JoinTools_Converter</module>
+        <module>JoinTools_ToDoList</module>
     </modules>
 
     <properties>
