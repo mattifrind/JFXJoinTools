@@ -21,7 +21,7 @@ public class Main extends Application {
 
         //Parent root =  FXMLLoader.load(Main.class.getClassLoader().getResource("Main.fxml"));
 
-        primaryStage.setTitle("JoinTools Sample Plugin");
+        primaryStage.setTitle("JoinTools ToDoList Plugin");
 
         //bei Bedarf hier den Namen des Icons anpassen
         primaryStage.getIcons().add(new Image("icon.png"));
