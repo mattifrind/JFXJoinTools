@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="JoinTools_ToDoList" />
+        <module name="JoinTools_Calculator" />
         <module name="JoinTools_NumberSystemConverter" />
         <module name="JoinTools_SlotMachine" />
         <module name="JoinTools_Sample" />
-        <module name="JoinTools_ToDoList" />
         <module name="JoinTools_Launcher" />
-        <module name="JoinTools_Calculator" />
         <module name="JoinTools_Converter" />
       </profile>
     </annotationProcessing>

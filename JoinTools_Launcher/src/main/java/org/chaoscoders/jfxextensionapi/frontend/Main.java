@@ -1,24 +1,20 @@
 package org.chaoscoders.jfxextensionapi.frontend;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import org.chaoscoders.jfxextensionapi.api.util.GuiManager;
 import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
-import org.chaoscoders.jfxextensionapi.frontend.util.CustomMenubar;
-import org.chaoscoders.jfxextensionapi.frontend.util.ShutDownMenu;
-import org.chaoscoders.jfxextensionapi.frontend.util.TempFileManager;
-import org.chaoscoders.jfxextensionapi.frontend.util.Widget;
+import org.chaoscoders.jfxextensionapi.frontend.util.*;
 
-import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class Main extends Application {
 
@@ -55,21 +51,20 @@ public class Main extends Application {
         TempFileManager.initTmpDirs();
         ExtensionLoader.loadPlugins();
 
-        GuiManager.customMenubar = new CustomMenubar(Screen.getPrimary().getVisualBounds().getWidth());
+        GuiManager.customMenubar = new CustomMenubar(primaryStage);
 
-        //loads all plugin widgets into the home node
-        List<Widget> widgets = ExtensionLoader.getPlugins().stream()
-                .map(plugin ->
-                        ExtensionLoader.getExtensionWidget(plugin.getPluginUUID()))
-                .collect(Collectors.toList());
-        HBox widgetsContainer = new HBox();
-        widgetsContainer.getChildren().addAll(widgets);
-        GuiManager.home = widgetsContainer;
+        //WidgetPane automatically loads all widgets
+        ScrollPane mainScrollPane = new ScrollPane(new WidgetsPane(primaryStage));
+        mainScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        mainScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        GuiManager.home = mainScrollPane;
 
         GuiManager.root = new BorderPane();
         GuiManager.showHomeScreen();
         GuiManager.root.setTop(GuiManager.customMenubar);
         primaryStage.setTitle("JFXJoinTools");
+        primaryStage.setMinWidth(450);
+        primaryStage.setMinHeight(400);
         primaryStage.setMaximized(true);
         primaryStage.setScene(new Scene(GuiManager.root, 720, 540));
         primaryStage.show();
