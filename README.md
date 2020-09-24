@@ -38,3 +38,17 @@ Willkommen zu unserem JavaFX Learning Repository. Der Setup ist nicht ganz so tr
 - MainController.java - Verleiht dem Layout seine Funktionalität. Gehört zur Main.fxml
 - icon.png - durch euer eigenes ersetzen.
 - plugin.yml - Metainformationen für euer Plugin eintragen
+
+## Maven Befehle
+####Im Hauptmodul (JFXJoinTools)
+Alles löschen und sauber installieren. Dadurch werden alle Jars neu gebaut und in den Plugin Ordner geschrieben:
+```
+mvn clean install
+```
+Es werden außerdem alle Tests ausgeführt
+####In Plugins (z.B. JoinTools_Sample)
+Ausführen/Debuggen der einzelnen Programme:
+```
+mvn javafx:run
+mvn javafx:run@debug
+```
