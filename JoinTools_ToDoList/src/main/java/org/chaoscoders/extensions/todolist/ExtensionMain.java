@@ -4,6 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
+import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionType;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 import org.chaoscoders.jfxextensionapi.api.util.CustomFXMLLoader;
 
@@ -31,6 +32,7 @@ public class ExtensionMain extends JavaFXExtension {
     @Override
     public ExtensionInfo getInfo() {
         return new ExtensionInfo("Dominic", "0.1", "ToDoList", "Eine ToDo Liste",
-                "Hier kannst du Listen zum effizienten Prokrastinieren schreiben!");
+                "Hier kannst du Listen zum effizienten Prokrastinieren schreiben!",
+                "#ffffff", "#3232ff", "#ffffff", ExtensionType.UTIL);
     }
 }

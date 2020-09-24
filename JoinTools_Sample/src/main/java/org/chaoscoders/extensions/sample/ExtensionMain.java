@@ -4,6 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
+import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionType;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 import org.chaoscoders.jfxextensionapi.api.util.CustomFXMLLoader;
 
@@ -30,6 +31,8 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public ExtensionInfo getInfo() {
-        return new ExtensionInfo("Luca", "1.0", "Sample", "Dolle Sache","Test description");
+        return new ExtensionInfo("Luca", "1.0",
+                "Sample", "Dolle Sache","Test description",
+                "#ffffff", "#3232ff", "#ffffff", ExtensionType.UTIL);
     }
 }

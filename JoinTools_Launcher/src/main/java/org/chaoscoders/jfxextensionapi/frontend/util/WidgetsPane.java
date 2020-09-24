@@ -1,49 +1,50 @@
 package org.chaoscoders.jfxextensionapi.frontend.util;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
+import javafx.scene.control.Accordion;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
+import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionType;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
-public class WidgetsPane extends GridPane {
-
-    private List<Widget> widgets;
-    private Stage primaryStage;
-
-    private static final int WIDGET_WIDTH = 180;
+public class WidgetsPane extends Accordion {
 
     public WidgetsPane(Stage primaryStage) {
-        //load all plugin widgets into the home node
-        this.primaryStage = primaryStage;
-        this.setPadding(new Insets(30));
-        //this.setBackground(new Background(new BackgroundFill(Color.BLACK, new CornerRadii(0), new Insets(0))));
-        widgets = ExtensionLoader.getPlugins().stream()
-                .map(plugin ->
-                        ExtensionLoader.getExtensionWidget(plugin.getPluginUUID()))
-                .collect(Collectors.toList());
-        updateWidgets();
+        TitledPane utilPane = new TitledPane();
+        Label lblUtil = new Label("Utils");
+        lblUtil.setFont(Font.font(25));
+        utilPane.setGraphic(lblUtil);
+        ScrollPane utilScrollPane = new ScrollPane(new WidgetsGrid(primaryStage, ExtensionType.UTIL));
+        utilScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        utilScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        utilPane.setContent(utilScrollPane);
 
-        primaryStage.widthProperty().addListener((observableValue, number, t1) -> {
-            updateWidgets();
-        });
-    }
+        TitledPane mathPane = new TitledPane();
+        Label lblMath = new Label("Math");
+        lblMath.setFont(Font.font(25));
+        mathPane.setGraphic(lblMath);
+        ScrollPane mathScrollPane = new ScrollPane(new WidgetsGrid(primaryStage, ExtensionType.MATH));
+        mathScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        mathScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        mathPane.setContent(mathScrollPane);
 
-    private void updateWidgets() {
-        this.getChildren().clear();
-        int computedColumnWidth = getComputedColumnCount();
-        for (int i = 0; i < widgets.size(); i++) {
-            this.add(widgets.get(i),i % computedColumnWidth,i / computedColumnWidth);
-            GridPane.setHgrow(widgets.get(i), Priority.ALWAYS);
-        }
-    }
+        TitledPane gamePane = new TitledPane();
+        Label lblGame = new Label("Games");
+        lblGame.setFont(Font.font(25));
+        gamePane.setGraphic(lblGame);
+        ScrollPane gamesScrollPane = new ScrollPane(new WidgetsGrid(primaryStage, ExtensionType.GAME));
+        gamesScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        gamesScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        gamePane.setContent(gamesScrollPane);
 
-    private int getComputedColumnCount() {
-        return Math.max((int) Math.round((primaryStage.getWidth() - 150) / WIDGET_WIDTH), 1);
+        this.getPanes().addAll(utilPane, mathPane, gamePane);
+        this.setPadding(new Insets(10));
+        this.setExpandedPane(utilPane);
+
     }
 }

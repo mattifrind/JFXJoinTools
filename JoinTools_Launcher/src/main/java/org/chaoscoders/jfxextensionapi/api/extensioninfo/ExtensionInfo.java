@@ -9,69 +9,89 @@ import org.chaoscoders.jfxextensionapi.frontend.controller.InfoPageController;
 import java.io.IOException;
 
 public class ExtensionInfo {
-    private final String author;
-    private final String version;
-    private final String name;
-    private final String tooltip;
-    private final String description;
-    private final Color textColor;
-    private final Color backgroundColor;
-    private final Color highlightColor;
+    private final String AUTHOR;
+    private final String VERSION;
+    private final String NAME;
+    private final String TOOLTIP;
+    private final String DESCRIPTION;
+    private final Color TEXT_COLOR;
+    private final Color BACKGROUND_COLOR;
+    private final Color HIGHLIGHT_COLOR;
+    private final ExtensionType TYPE;
 
-    public ExtensionInfo(String author, String version, String name, String tooltip, String description) {
-        this.author = author;
-        this.version = version;
-        this.name = name;
-        this.tooltip = tooltip;
-        this.description = description;
+    public ExtensionInfo(String AUTHOR, String VERSION, String NAME, String tooltip, String description) {
+        this.AUTHOR = AUTHOR;
+        this.VERSION = VERSION;
+        this.NAME = NAME;
+        this.TOOLTIP = tooltip;
+        this.DESCRIPTION = description;
 
-        this.textColor = Color.valueOf("#ffffff");
-        this.backgroundColor = Color.valueOf("#444444");
-        this.highlightColor = Color.valueOf("#161616");
+        this.TEXT_COLOR = Color.valueOf("#ffffff");
+        this.BACKGROUND_COLOR = Color.valueOf("#444444");
+        this.HIGHLIGHT_COLOR = Color.valueOf("#161616");
+        this.TYPE = ExtensionType.UTIL;
     }
 
-    public ExtensionInfo(String author, String version, String name, String tooltip, String description,
+    public ExtensionInfo(String AUTHOR, String VERSION, String NAME, String tooltip, String description,
                          String textColor, String backgroundColor, String highlightColor) {
-        this.author = author;
-        this.version = version;
-        this.name = name;
-        this.tooltip = tooltip;
-        this.description = description;
-        this.textColor = Color.valueOf(textColor);
-        this.backgroundColor = Color.valueOf(backgroundColor);
-        this.highlightColor = Color.valueOf(highlightColor);
+        this.AUTHOR = AUTHOR;
+        this.VERSION = VERSION;
+        this.NAME = NAME;
+        this.TOOLTIP = tooltip;
+        this.DESCRIPTION = description;
+        this.TEXT_COLOR = Color.valueOf(textColor);
+        this.BACKGROUND_COLOR = Color.valueOf(backgroundColor);
+        this.HIGHLIGHT_COLOR = Color.valueOf(highlightColor);
+        this.TYPE = ExtensionType.UTIL;
+    }
+
+    public ExtensionInfo(String AUTHOR, String VERSION, String NAME, String tooltip, String description,
+                         String textColor, String backgroundColor, String highlightColor, ExtensionType type) {
+        this.AUTHOR = AUTHOR;
+        this.VERSION = VERSION;
+        this.NAME = NAME;
+        this.TOOLTIP = tooltip;
+        this.DESCRIPTION = description;
+        this.TEXT_COLOR = Color.valueOf(textColor);
+        this.BACKGROUND_COLOR = Color.valueOf(backgroundColor);
+        this.HIGHLIGHT_COLOR = Color.valueOf(highlightColor);
+        this.TYPE = type;
     }
 
     public Color getTextColor() {
-        return textColor;
+        return TEXT_COLOR;
     }
 
     public Color getBackgroundColor() {
-        return backgroundColor;
+        return BACKGROUND_COLOR;
     }
 
     public Color getHighlightColor() {
-        return highlightColor;
+        return HIGHLIGHT_COLOR;
     }
 
     public String getAuthor() {
-        return author;
+        return AUTHOR;
     }
 
     public String getVersion() {
-        return version;
+        return VERSION;
     }
 
     public String getName() {
-        return name;
+        return NAME;
+    }
+
+    public ExtensionType getTYPE() {
+        return TYPE;
     }
 
     public String getTooltip() {
-        return tooltip;
+        return TOOLTIP;
     }
 
     public String getDescription() {
-        return description;
+        return DESCRIPTION;
     }
     
     public Node getInfoPage(){

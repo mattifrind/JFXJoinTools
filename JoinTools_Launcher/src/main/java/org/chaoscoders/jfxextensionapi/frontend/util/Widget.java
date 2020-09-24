@@ -13,6 +13,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
+import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionType;
 import org.chaoscoders.jfxextensionapi.api.util.GuiManager;
 import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 
@@ -34,12 +35,14 @@ public class Widget extends Parent {
     private Color textColor;
     private int layoutX;
     private int layoutY;
+    private ExtensionType type;
 
     private UUID widgetID;
 
 
     public Widget(int layoutX, int layoutY, String extensionName, Image iconImage, String toolTip,
-                  Color colorHighlighter, Color backgroundColor, Color textColor, UUID widgetID) {
+                  Color colorHighlighter, Color backgroundColor, Color textColor, ExtensionType type, UUID widgetID) {
+        this.type = type;
         this.widgetID = widgetID;
         this.layoutX = layoutX;
         this.layoutY = layoutY;
@@ -75,7 +78,8 @@ public class Widget extends Parent {
                 ExtensionLoader.getExtensionInfo(pluginUUID).getTooltip(),
                 ExtensionLoader.getExtensionInfo(pluginUUID).getHighlightColor(),
                 ExtensionLoader.getExtensionInfo(pluginUUID).getBackgroundColor(),
-                ExtensionLoader.getExtensionInfo(pluginUUID).getTextColor(), pluginUUID);
+                ExtensionLoader.getExtensionInfo(pluginUUID).getTextColor(),
+                ExtensionLoader.getExtensionInfo(pluginUUID).getTYPE(), pluginUUID);
     }
 
     private void initBackgroundHighlighter() {
@@ -243,4 +247,7 @@ public class Widget extends Parent {
         });
     }
 
+    public ExtensionType getType() {
+        return type;
+    }
 }
