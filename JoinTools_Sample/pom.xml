@@ -44,7 +44,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>Main</mainClass>
+                    <mainClass>org.chaoscoders.extensions.sample.Main</mainClass>
                     <source>15</source>
                     <target>15</target>
                 </configuration>
@@ -52,13 +52,13 @@
                     <execution>
                         <id>run</id>
                         <configuration>
-                            <mainClass>Main</mainClass>
+                            <mainClass>org.chaoscoders.extensions.sample.Main</mainClass>
                         </configuration>
                     </execution>
                     <execution>
                         <id>debug</id>
                         <configuration>
-                            <mainClass>Main</mainClass>
+                            <mainClass>org.chaoscoders.extensions.sample.Main</mainClass>
                             <options>
                                 <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8000</option>
                             </options>
@@ -86,7 +86,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>Main</mainClass>
+                            <mainClass>org.chaoscoders.extensions.sample.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
