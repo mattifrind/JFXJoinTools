@@ -94,7 +94,6 @@ public class ExtensionLoader {
                         JavaFXExtension extension = (JavaFXExtension) pluginMainClass.
                                 getConstructor(constructorParam).newInstance(pluginUUID);
 
-                        Method rootMethod = pluginMainClass.getMethod("getRoot");
                         Method getSettingsMethod = pluginMainClass.getMethod("getSettings");
                         Method getInfoMethod = pluginMainClass.getMethod("getInfo");
 

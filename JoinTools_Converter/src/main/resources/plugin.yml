@@ -2,4 +2,4 @@
 # Name und Version denkst du dir aus.
 # Der Text aus dem Tooltip wird in der Hauptanwendung beim Hovern über dein Tool angezeigt.
 
-main: org.chaoscoders.firstextension.layout.ExtensionMain
+main: org.chaoscoders.extensions.converter.ExtensionMain

@@ -2,8 +2,4 @@
 # Name und Version denkst du dir aus.
 # Der Text aus dem Tooltip wird in der Hauptanwendung beim Hovern über dein Tool angezeigt.
 
-main: org.chaoscoders.firstextension.layout.ExtensionMain
-name: Zahlensysteme
-version: A-1.0
-tooltip: Justus Zahlensysteme
-layout: org.chaoscoders.firstextension.layout
+main: org.chaoscoders.extensions.numbersystemconverter.ExtensionMain
