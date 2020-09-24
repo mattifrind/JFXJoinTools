@@ -1,22 +1,61 @@
 package org.chaoscoders.extensions.numbersystemconverter;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
-public class MainController {
-    //jeweils alle im FXML definiert. siehe kleines Symbol links neben der Zeile
-    public TextField tfMain;
-    public Button btnMain;
-    public Label lblOutput;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    //Diese Methode wird von dem im FXML definierten Button (btnMain) aufgerufen
-    public void printToLabel(ActionEvent actionEvent) {
-        lblOutput.setText(getLabelText(tfMain.getText()));
+
+public class MainController implements Initializable {
+    // ToggleGroup Original System
+    @FXML
+    ToggleGroup tgCurrentSys;
+    @FXML
+    RadioButton rbtnCurBin;
+    @FXML
+    RadioButton rbtnCurOct;
+    @FXML
+    RadioButton rbtnCurDec;
+    @FXML
+    RadioButton rbtnCurHex;
+
+    //ToggleGroup  Target System
+    @FXML
+    ToggleGroup tgTargetSys;
+    @FXML
+    RadioButton rbtnTarBin;
+    @FXML
+    RadioButton rbtnTarOct;
+    @FXML
+    RadioButton rbtnTarDec;
+    @FXML
+    RadioButton rbtnTarHex;
+
+    @FXML
+    Button btnConvert;
+
+    @FXML
+    private void printMyShit(ActionEvent event){
+        System.out.println(tgCurrentSys.getSelectedToggle().getUserData()+" Original System");
+        System.out.println(tgTargetSys.getSelectedToggle().getUserData()+" Target System");
     }
 
-    public String getLabelText(String inputString) {
-        return "Du hast \"" + inputString + "\" eingegeben.";
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        rbtnCurBin.setUserData(NumberSystem.BINARY);
+        rbtnCurOct.setUserData(NumberSystem.OCTAL);
+        rbtnCurDec.setUserData(NumberSystem.DECIMAL);
+        rbtnCurHex.setUserData(NumberSystem.HEX);
+
+        rbtnTarBin.setUserData(NumberSystem.BINARY);
+        rbtnTarOct.setUserData(NumberSystem.OCTAL);
+        rbtnTarDec.setUserData(NumberSystem.DECIMAL);
+        rbtnTarHex.setUserData(NumberSystem.HEX);
     }
 }

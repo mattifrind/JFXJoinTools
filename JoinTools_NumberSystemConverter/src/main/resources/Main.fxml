@@ -3,26 +3,86 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root alignment="center" hgap="10" style="-fx-background-color: #85a77d;" type="GridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="300.0" prefWidth="300.0" spacing="10.0">
          <children>
-            <Label text="Beispiel Tool">
+            <Label text="Number Converter">
                <font>
-                  <Font size="23.0" />
+                  <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="tfMain" />
-            <Button fx:id="btnMain" mnemonicParsing="false" onAction="#printToLabel" text="Kopieren" />
-            <Label fx:id="lblOutput" text="Du hast nix eingegeben." />
+            <TextField promptText="Number to be converted" style="-fx-background-color: #e2ece2;" />
+            <Label text="Current System:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="28.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="rbtnCurBin" mnemonicParsing="false" text="Binary">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tgCurrentSys" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbtnCurOct" mnemonicParsing="false" text="Octal" toggleGroup="$tgCurrentSys" />
+                  <RadioButton fx:id="rbtnCurDec" mnemonicParsing="false" text="Decimal" toggleGroup="$tgCurrentSys" />
+                  <RadioButton fx:id="rbtnCurHex" mnemonicParsing="false" text="Hex" toggleGroup="$tgCurrentSys" />
+               </children>
+            </HBox>
+            <Label text="Target System:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="28.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="rbtnTarBin" mnemonicParsing="false" text="Binary">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tgTargetSys" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbtnTarOct" mnemonicParsing="false" text="Octal" toggleGroup="$tgTargetSys" />
+                  <RadioButton fx:id="rbtnTarDec" mnemonicParsing="false" text="Decimal" toggleGroup="$tgTargetSys" />
+                  <RadioButton fx:id="rbtnTarHex" mnemonicParsing="false" text="Hex" toggleGroup="$tgTargetSys" />
+               </children>
+            </HBox>
+            <HBox prefHeight="76.0" prefWidth="280.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnConvert" mnemonicParsing="false" onAction="#printMyShit" prefHeight="51.0" prefWidth="104.0" style="-fx-background-color: #617869; -fx-border-color: #000000;" text="Convert" textFill="#e2ece2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label prefHeight="51.0" prefWidth="77.0" style="-fx-border-color: #000000;" text="Result" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
          </children>
          <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
    </children>

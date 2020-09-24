@@ -2,6 +2,7 @@ package org.chaoscoders.extensions.numbersystemconverter;
 
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
@@ -20,13 +21,14 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public Node getRoot() {
-        return CustomFXMLLoader.loadFXMLFile("Main.fxml", this, (Node) new AnchorPane(), new MainController());
+        return CustomFXMLLoader.loadFXMLFile("Main.fxml", this, (Node) new GridPane(), new MainController());
     }
 
     @Override
     public Settings getSettings() {
         return null;
-    }
+    } //Später für Einstellungen, benötigt Settings-Objekt.
+    //Ne art Liste für Settings die im Launcher eingestellt werden kann. Tolles zeug, mal sehen ob Luca das packt.
 
     @Override
     public ExtensionInfo getInfo() {
