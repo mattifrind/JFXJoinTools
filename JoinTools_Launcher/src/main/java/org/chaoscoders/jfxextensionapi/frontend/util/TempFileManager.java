@@ -52,8 +52,7 @@ public class TempFileManager {
     }
 
 
-    public static void initTmpDirs(UUID pluginUUID){
-        TempFileManager.cleanUp();
+    public static void createTmpDir(UUID pluginUUID){
         try {
             if(Files.notExists(Paths.get(Main.getTmpdir(pluginUUID)))){
                 Files.createDirectories(Paths.get(Main.getTmpdir(pluginUUID)));

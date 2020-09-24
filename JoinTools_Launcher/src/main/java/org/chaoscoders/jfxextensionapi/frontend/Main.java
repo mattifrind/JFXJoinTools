@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -61,7 +62,7 @@ public class Main extends Application {
                 .map(plugin ->
                         ExtensionLoader.getExtensionWidget(plugin.getPluginUUID()))
                 .collect(Collectors.toList());
-        VBox widgetsContainer = new VBox();
+        HBox widgetsContainer = new HBox();
         widgetsContainer.getChildren().addAll(widgets);
         GuiManager.home = widgetsContainer;
 

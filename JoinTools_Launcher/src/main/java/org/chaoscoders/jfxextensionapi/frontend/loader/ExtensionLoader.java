@@ -92,7 +92,7 @@ public class ExtensionLoader {
             if (jar.isFile() && jar.getName().endsWith(".jar")) {
                 try {
                     UUID pluginUUID = UUID.randomUUID();
-                    TempFileManager.initTmpDirs(pluginUUID);
+                    TempFileManager.createTmpDir(pluginUUID);
 
                     String path = ConfigLoader.getConfigParameter(jar.toURL(), "main", pluginUUID);
 

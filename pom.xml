@@ -16,6 +16,7 @@
         <module>JoinTools_Converter</module>
         <module>JoinTools_ToDoList</module>
         <module>JoinTools_SlotMachine</module>
+        <module>JoinTools_NumberSystemConverter</module>
     </modules>
 
     <properties>

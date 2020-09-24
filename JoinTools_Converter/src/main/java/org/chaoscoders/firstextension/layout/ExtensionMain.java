@@ -31,6 +31,6 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public ExtensionInfo getInfo() {
-        return new ExtensionInfo("Luca", "1.0", "Sample", "Dolle Sache","Test description");
+        return new ExtensionInfo("Luca", "1.0", "Converter", "Dolle Sache","Test description");
     }
 }
