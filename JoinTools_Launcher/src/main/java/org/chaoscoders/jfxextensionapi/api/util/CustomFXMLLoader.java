@@ -46,6 +46,7 @@ public class CustomFXMLLoader {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("result: " + result);
         return result;
     }
 
