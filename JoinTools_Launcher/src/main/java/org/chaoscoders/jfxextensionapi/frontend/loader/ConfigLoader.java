@@ -25,33 +25,8 @@ public class ConfigLoader {
             pluginConfigs = new HashMap<>();
     }
 
-    public static HashMap<String, String> getConfigContent(File jar, UUID pluginUUID){
 
-        init();
-
-        HashMap<String, String> result = new HashMap<>();
-
-        ArrayList<String> parameters = new ArrayList<>(
-                Arrays.asList("main", "name", "version", "tooltip", "layout"));
-
-        for (String s : parameters){
-            try {
-                String param = getConfigParameter(jar.toURL(), s, pluginUUID);
-                if(param.equals("")){
-                    throw new InvalidPluginYMLException("Invalid plugin.yml (plugin: "
-                            + jar.getName() + ").");
-                }else{
-                    result.put(s, param);
-                }
-            } catch (IOException | InvalidPluginYMLException e) {
-                e.printStackTrace();
-            }
-        }
-        return result;
-    }
-
-
-    public static String getConfigParameter(URL jar, String parameter, UUID pluginUUID) {
+    public static String getConfigParameter(URL jar, UUID pluginUUID) {
 
         init();
 
@@ -73,8 +48,8 @@ public class ConfigLoader {
                     BufferedReader br = new BufferedReader(new FileReader(new File(Main.getTmpdir(pluginUUID) + "\\tmp.txt")));
                     String line = null;
                     while (( line = br.readLine()) != null ){
-                        if(line.contains(parameter + ": ")){
-                            result = line.replace(parameter + ": ", "");
+                        if(line.contains("main: ")){
+                            result = line.replace("main: ", "");
                         }
                     }
                     br.close();

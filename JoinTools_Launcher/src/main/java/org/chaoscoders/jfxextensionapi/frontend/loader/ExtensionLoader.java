@@ -1,6 +1,5 @@
 package org.chaoscoders.jfxextensionapi.frontend.loader;
 
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
@@ -10,6 +9,7 @@ import org.chaoscoders.jfxextensionapi.frontend.Main;
 import org.chaoscoders.jfxextensionapi.frontend.util.TempFileManager;
 import org.chaoscoders.jfxextensionapi.frontend.util.Widget;
 import org.chaoscoders.jfxextensionapi.frontend.util.exceptions.InvalidPluginYMLException;
+import org.chaoscoders.jfxextensionapi.frontend.util.exceptions.PluginUUIDNotResolvedException;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,11 +34,9 @@ public class ExtensionLoader {
 
     private static ArrayList<JavaFXExtension> plugins;
 
-    private static HashMap<UUID, Node> extensionMainPages;
     private static HashMap<UUID, Settings> extensionSettings;
     private static HashMap<UUID, ExtensionInfo> extensionInfos;
     private static HashMap<UUID, Image> extensionIcons;
-    private static HashMap<UUID, HashMap<String, String>> extensionConfigs;
     private static HashMap<UUID, Widget> extensionWidgets;
 
 
@@ -52,11 +50,6 @@ public class ExtensionLoader {
         return extensionSettings.get(pluginUUID);
     }
 
-    public static HashMap<String, String> getExtensionConfigs(UUID pluginUUID){
-        init();
-        return extensionConfigs.get(pluginUUID);
-    }
-
     public static ExtensionInfo getExtensionInfo(UUID pluginUUID){
         init();
         return extensionInfos.get(pluginUUID);
@@ -65,11 +58,6 @@ public class ExtensionLoader {
     public static Image getExtensionIcon(UUID pluginUUID){
         init();
         return extensionIcons.get(pluginUUID);
-    }
-
-    public static Node getExtensionMainPage(UUID pluginUUID){
-        init();
-        return extensionMainPages.get(pluginUUID);
     }
 
     public static HashMap<UUID, Widget> getExtensionWidgets(){
@@ -94,13 +82,12 @@ public class ExtensionLoader {
                     UUID pluginUUID = UUID.randomUUID();
                     TempFileManager.createTmpDir(pluginUUID);
 
-                    String path = ConfigLoader.getConfigParameter(jar.toURL(), "main", pluginUUID);
+                    String path = ConfigLoader.getConfigParameter(jar.toURL(), pluginUUID);
 
                     Class<?> pluginMainClass = getClassFromPath(jar, path);
                     Class<?> constructorParam = UUID.class;
 
-                    CustomFXMLLoader.loadFXMLFiles(jar.toURL(),
-                            ConfigLoader.getConfigParameter(jar.toURL(), "", pluginUUID), pluginUUID);
+                    CustomFXMLLoader.loadFXMLFiles(jar.toURL(), pluginUUID);
 
 
                     if(pluginMainClass.getConstructor(constructorParam).newInstance(pluginUUID) instanceof JavaFXExtension){
@@ -114,8 +101,6 @@ public class ExtensionLoader {
                         extensionSettings.put(pluginUUID, (Settings) getSettingsMethod.invoke(extension));
                         extensionInfos.put(pluginUUID, (ExtensionInfo) getInfoMethod.invoke(extension));
                         extensionIcons.put(pluginUUID, getExtensionIcon(jar.toURL(), pluginUUID));
-                        extensionConfigs.put(pluginUUID, ConfigLoader.getConfigContent(jar, pluginUUID));
-                        extensionMainPages.put(pluginUUID, (Node) rootMethod.invoke(extension));
                         extensionWidgets.put(pluginUUID, new Widget(pluginUUID));
 
                         ExtensionLoader.plugins.add(extension);
@@ -132,29 +117,26 @@ public class ExtensionLoader {
     }
 
     public static JavaFXExtension resolvePluginID(UUID pluginID){
-        for(JavaFXExtension javaFXExtension : plugins){
-            if(javaFXExtension.getPluginUUID() == pluginID){
-                return javaFXExtension;
+        try{
+            for(JavaFXExtension javaFXExtension : plugins){
+                if(javaFXExtension.getPluginUUID() == pluginID){
+                    return javaFXExtension;
+                }
             }
+            throw new PluginUUIDNotResolvedException("Couldn't resolve Plugin UUID.");
+        }catch (PluginUUIDNotResolvedException e1){
+            return null;
         }
-        System.out.println("Error. Couldn't resolve pluginID");
-        return null;
     }
 
 
     //private internal methods
     private static void init(){
-        if(extensionMainPages == null){
-            extensionMainPages = new HashMap<>();
-        }
         if (plugins == null){
             plugins = new ArrayList<>();
         }
         if(extensionWidgets == null){
             extensionWidgets = new HashMap<>();
-        }
-        if(extensionConfigs == null){
-            extensionConfigs = new HashMap<>();
         }
         if(extensionIcons == null){
             extensionIcons = new HashMap<>();

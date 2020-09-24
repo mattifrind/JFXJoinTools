@@ -20,6 +20,7 @@
             <TextField fx:id="tfMain" />
             <Button fx:id="btnMain" mnemonicParsing="false" onAction="#printToLabel" text="Kopieren" />
             <Label fx:id="lblOutput" text="Du hast nix eingegeben. PENIS" />
+            <Button mnemonicParsing="false" text="rsdfeg&lt;&lt;&lt;&lt;sy&lt;df" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

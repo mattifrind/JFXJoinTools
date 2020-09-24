@@ -58,7 +58,7 @@ public class CustomFXMLLoader {
         return new CustomFXMLLoader().returnFXMLFile(name, root, rootPane, null);
     }
 
-    public static void loadFXMLFiles(URL jar, String layoutPath, UUID pluginUUID){
+    public static void loadFXMLFiles(URL jar, UUID pluginUUID){
 
         String path = "";
         try{

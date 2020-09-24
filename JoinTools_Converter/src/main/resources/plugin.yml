@@ -3,7 +3,3 @@
 # Der Text aus dem Tooltip wird in der Hauptanwendung beim Hovern über dein Tool angezeigt.
 
 main: org.chaoscoders.firstextension.layout.ExtensionMain
-name: Converter
-version: A-1.0
-tooltip: Nur ein Sample, nix funktioniert
-layout: org.chaoscoders.firstextension.layout
