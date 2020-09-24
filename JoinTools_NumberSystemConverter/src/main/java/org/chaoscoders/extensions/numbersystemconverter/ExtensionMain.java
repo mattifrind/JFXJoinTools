@@ -30,6 +30,7 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public ExtensionInfo getInfo() {
-        return new ExtensionInfo("Justus", "0.1", "Zahlensysteme", "Rechne Zahlensysteme um.","Funktionen....");
+        return new ExtensionInfo("Justus", "0.1", "Zahlensysteme", "Rechne Zahlensysteme um.","Funktionen....",
+                "#ffffff", "#6e04a3", "#2d0044");
     }
 }

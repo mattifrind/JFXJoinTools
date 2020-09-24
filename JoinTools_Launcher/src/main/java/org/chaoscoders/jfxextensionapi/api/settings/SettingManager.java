@@ -15,20 +15,20 @@ public class SettingManager {
 
     public static void saveSetting(SettingObject settingObject, String tree){
         //Speichern eines Settings abhängig von der pluginID und dem settingobject name
-        Preferences myConnectionPrefs = Preferences.userRoot().node("JoinTools/" + tree);
+        Preferences myPrefs = Preferences.userRoot().node("JoinTools/" + tree);
         Object value = settingObject.getValue();
         if(value instanceof Integer){
-            myConnectionPrefs.putInt(settingObject.getSettingName(), (int) value);
+            myPrefs.putInt(settingObject.getSettingName(), (int) value);
         }else if(value instanceof Long){
-            myConnectionPrefs.putLong(settingObject.getSettingName(), (long) value);
+            myPrefs.putLong(settingObject.getSettingName(), (long) value);
         }else if(value instanceof Boolean){
-            myConnectionPrefs.putBoolean(settingObject.getSettingName(), (boolean) value);
+            myPrefs.putBoolean(settingObject.getSettingName(), (boolean) value);
         }else if(value instanceof Float){
-            myConnectionPrefs.putFloat(settingObject.getSettingName(), (float) value);
+            myPrefs.putFloat(settingObject.getSettingName(), (float) value);
         }else if(value instanceof Double){
-            myConnectionPrefs.putDouble(settingObject.getSettingName(), (double) value);
+            myPrefs.putDouble(settingObject.getSettingName(), (double) value);
         }else{
-            myConnectionPrefs.put(settingObject.getSettingName(), value.toString());
+            myPrefs.put(settingObject.getSettingName(), value.toString());
         }
     }
 

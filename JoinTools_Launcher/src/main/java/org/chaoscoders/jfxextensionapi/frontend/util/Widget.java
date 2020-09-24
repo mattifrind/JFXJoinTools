@@ -73,8 +73,9 @@ public class Widget extends Parent {
         this(20, 50, ExtensionLoader.getExtensionInfo(pluginUUID).getName(),
                 ExtensionLoader.getExtensionIcon(pluginUUID),
                 ExtensionLoader.getExtensionInfo(pluginUUID).getTooltip(),
-                Color.valueOf("#161616"), Color.valueOf("#444444"),
-                Color.valueOf("#ffffff"), pluginUUID);
+                ExtensionLoader.getExtensionInfo(pluginUUID).getHighlightColor(),
+                ExtensionLoader.getExtensionInfo(pluginUUID).getBackgroundColor(),
+                ExtensionLoader.getExtensionInfo(pluginUUID).getTextColor(), pluginUUID);
     }
 
     private void initBackgroundHighlighter() {
