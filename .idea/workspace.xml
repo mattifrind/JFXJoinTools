@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8ceff8b-70bc-4d51-a1bc-fb5590bf5613" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/JoinTools_Converter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\walfo\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\202.7319.50\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hmbb1zHhF1fu85i6vQGgtzV6eP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JoinTools_NumberSystemConverter" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2816092" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Development\Java Projects\Other Projects\JFXJoinTools_Maven" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.RunLauncher">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DebugCalculator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run@debug" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Calculator" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="DebugConverter" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run@debug" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Converter" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="DebugLauncher" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run@debug" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Launcher" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="DebugNumberSystemConverter" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run@debug" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_NumberSystemConverter" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="DebugSample" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run@debug" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Sample" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="DebugSlotMachine" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run@debug" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_SlotMachine" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="DebugToDoList" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run@debug" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_ToDoList" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RunCalculator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Calculator" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RunConverter" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Converter" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RunLauncher" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Launcher" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RunNumberSystemConverter" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_NumberSystemConverter" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RunSample" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_Sample" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RunSlotMachine" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_SlotMachine" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RunToDoList" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinTools_ToDoList" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.RunLauncher" />
+      <item itemvalue="Maven.DebugLauncher" />
+      <item itemvalue="Maven.RunSlotMachine" />
+      <item itemvalue="Maven.DebugSlotMachine" />
+      <item itemvalue="Maven.RunSample" />
+      <item itemvalue="Maven.DebugSample" />
+      <item itemvalue="Maven.RunConverter" />
+      <item itemvalue="Maven.DebugConverter" />
+      <item itemvalue="Maven.RunCalculator" />
+      <item itemvalue="Maven.DebugCalculator" />
+      <item itemvalue="Maven.RunNumberSystemConverter" />
+      <item itemvalue="Maven.DebugNumberSystemConverter" />
+      <item itemvalue="Maven.RunToDoList" />
+      <item itemvalue="Maven.DebugToDoList" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8ceff8b-70bc-4d51-a1bc-fb5590bf5613" name="Default Changelist" comment="" />
+      <created>1600619283050</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600619283050</updated>
+      <workItem from="1600619284100" duration="865000" />
+      <workItem from="1600620186086" duration="4898000" />
+      <workItem from="1600689929966" duration="6146000" />
+      <workItem from="1600780001900" duration="725000" />
+      <workItem from="1600868497372" duration="2678000" />
+      <workItem from="1600960435789" duration="12871000" />
+      <workItem from="1600988806178" duration="2840000" />
+    </task>
+    <task id="LOCAL-00001" summary="Final Commit.">
+      <created>1600695963019</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600695963019</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit module &quot;number system converter&quot;">
+      <created>1600962670037</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600962670037</updated>
+    </task>
+    <task id="LOCAL-00003" summary="close #32">
+      <created>1600964082958</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600964082958</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changed package names for each application/module.  Edited each plugin.yml and ExtensionMain.java to fit to the new plugin.yml-Loading-System. Requires Pull and clean+install from here to work with the launcher application.">
+      <created>1600966271531</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600966271531</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Minor Adjustment">
+      <created>1600968151581</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600968151581</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed pom.xml for justus. to be continued...">
+      <created>1600971166929</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600971166929</updated>
+    </task>
+    <task id="LOCAL-00007" summary="close #33">
+      <created>1600973944448</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600973944448</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Final Commit." />
+    <MESSAGE value="commit module &quot;number system converter&quot;" />
+    <MESSAGE value="close #32" />
+    <MESSAGE value="Changed package names for each application/module.  Edited each plugin.yml and ExtensionMain.java to fit to the new plugin.yml-Loading-System. Requires Pull and clean+install from here to work with the launcher application." />
+    <MESSAGE value="Minor Adjustment" />
+    <MESSAGE value="Fixed pom.xml for justus. to be continued..." />
+    <MESSAGE value="close #33" />
+    <option name="LAST_COMMIT_MESSAGE" value="close #33" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="311" y="175" width="1219" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600993890016">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="311" y="175" width="1219" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600993890016" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1600966987248">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600966987248" />
+    <state x="389" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600961811581">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="389" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600961811581" />
+    <state x="0" y="126" key="CommitChangelistDialog2" timestamp="1600993702964">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="126" key="CommitChangelistDialog2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600993702964" />
+    <state x="0" y="115" key="DiffContextDialog" timestamp="1600993621099">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="115" key="DiffContextDialog/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600993621099" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1600970287847">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600970287847" />
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590199" />
+    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.0.center/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590199" />
+    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.0.left/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590198" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.0.right/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590199" />
+    <state width="1877" height="291" key="GridCell.Tab.1.bottom" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.1.bottom/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state width="1877" height="291" key="GridCell.Tab.1.center" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.1.center/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state width="1877" height="291" key="GridCell.Tab.1.left" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.1.left/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state width="1877" height="291" key="GridCell.Tab.1.right" timestamp="1600974021841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="291" key="GridCell.Tab.1.right/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1600967726068">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600967726068" />
+    <state x="2360" y="101" key="SettingsEditor/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600624639399" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600973947056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600973947056" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600993590654">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600993590654" />
+    <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600707413966">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600707413966" />
+    <state x="546" y="181" key="new project wizard" timestamp="1600624462859">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="546" y="181" key="new project wizard/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600624462859" />
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1600966778499">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600966778499" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1600624457210">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" key="search.everywhere.popup/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600624457210" />
+  </component>
+</project>
