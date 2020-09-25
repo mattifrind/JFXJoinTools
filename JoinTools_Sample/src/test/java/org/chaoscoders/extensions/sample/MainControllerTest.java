@@ -1,6 +1,6 @@
-package org.chaoscoders.extensions.calculator;
+package org.chaoscoders.extensions.sample;
 
-import org.chaoscoders.extensions.slotmachine.MainController;
+import org.chaoscoders.extensions.sample.MainController;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

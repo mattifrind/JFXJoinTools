@@ -1,6 +1,6 @@
-package org.chaoscoders.extensions.calculator;
+package org.chaoscoders.extensions.numbersystemconverter;
 
-import org.chaoscoders.extensions.sample.MainController;
+import org.chaoscoders.extensions.numbersystemconverter.MainController;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

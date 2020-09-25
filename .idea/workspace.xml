@@ -3,9 +3,38 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a8ceff8b-70bc-4d51-a1bc-fb5590bf5613" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Calculator/JoinTools_Calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Calculator/JoinTools_Calculator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Converter/JoinTools_Converter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Converter/JoinTools_Converter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Converter/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Converter/src/test/java/org/chaoscoders/extensions/converter/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Launcher/JoinTools_Launcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Launcher/JoinTools_Launcher.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/JoinTools_NumberSystemConverter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/JoinTools_NumberSystemConverter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/test/java/org/chaoscoders/extensions/numbersystemconverter/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Sample/JoinTools_Sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Sample/JoinTools_Sample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Sample/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Sample/src/test/java/org/chaoscoders/extensions/sample/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_SlotMachine/JoinTools_SlotMachine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_SlotMachine/JoinTools_SlotMachine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_SlotMachine/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_SlotMachine/src/test/java/org/chaoscoders/extensions/slotmachine/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_ToDoList/JoinTools_ToDoList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_ToDoList/JoinTools_ToDoList.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_ToDoList/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_ToDoList/src/test/java/org/chaoscoders/extensions/todolist/MainControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +52,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JoinTools_Converter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -34,11 +63,15 @@
     </option>
   </component>
   <component name="ProjectId" id="1hmbb1zHhF1fu85i6vQGgtzV6eP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -50,6 +83,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.chaoscoders.extensions.numbersystemconverter" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Development\Java Projects\Other Projects\JFXJoinTools_Maven" />
     </key>
@@ -433,7 +469,10 @@
       <item itemvalue="Maven.DebugToDoList" />
     </list>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a8ceff8b-70bc-4d51-a1bc-fb5590bf5613" name="Default Changelist" comment="" />
@@ -504,7 +543,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Final Commit." />
     <MESSAGE value="commit module &quot;number system converter&quot;" />
     <MESSAGE value="close #32" />
@@ -523,6 +566,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600966987248" />
+    <state x="652" y="449" width="904" height="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601027414439">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="652" y="449" width="904" height="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1920.1040/0.0.1920.1160@0.0.1920.1160" timestamp="1601027414439" />
     <state x="389" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600961811581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
