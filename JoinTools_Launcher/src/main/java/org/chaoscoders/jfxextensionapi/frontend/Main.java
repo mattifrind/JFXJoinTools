@@ -1,16 +1,14 @@
 package org.chaoscoders.jfxextensionapi.frontend;
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import org.chaoscoders.jfxextensionapi.api.util.GuiManager;
+import org.chaoscoders.jfxextensionapi.frontend.loader.WidgetLoader;
 import org.chaoscoders.jfxextensionapi.frontend.loader.ExtensionLoader;
 import org.chaoscoders.jfxextensionapi.frontend.util.*;
 
@@ -54,10 +52,8 @@ public class Main extends Application {
         GuiManager.customMenubar = new CustomMenubar(primaryStage);
 
         //WidgetPane automatically loads all widgets
-        ScrollPane mainScrollPane = new ScrollPane(new WidgetsPane(primaryStage));
-        mainScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        mainScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        GuiManager.home = mainScrollPane;
+        WidgetLoader.load();
+        GuiManager.home = new WidgetsPane(primaryStage);
 
         GuiManager.root = new BorderPane();
         GuiManager.showHomeScreen();
