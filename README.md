@@ -1,6 +1,7 @@
 # JFXJoinTools
-
 Willkommen zu unserem JavaFX Learning Repository. Der Setup ist nicht ganz so trivial, aber wir haben versucht alle Schritte möglichst vollständig aufzuschreiben.
+
+![Master Build](https://github.com/mattifrind/JFXJoinTools/workflows/Master%20Build/badge.svg)
 
 ## Getting Started
 - IntelliJ Idea 2020 installieren
