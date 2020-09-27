@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -22,19 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8ceff8b-70bc-4d51-a1bc-fb5590bf5613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/JoinTools_Calculator/JoinTools_Calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Calculator/JoinTools_Calculator.iml" afterDir="false" />
+    <list default="true" id="a8ceff8b-70bc-4d51-a1bc-fb5590bf5613" name="Default Changelist" comment="changed Icon">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Calculator/src/main/resources/icon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_Converter/JoinTools_Converter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Converter/JoinTools_Converter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinTools_Converter/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Converter/src/test/java/org/chaoscoders/extensions/converter/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_Launcher/JoinTools_Launcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Launcher/JoinTools_Launcher.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/JoinTools_NumberSystemConverter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/JoinTools_NumberSystemConverter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/test/java/org/chaoscoders/extensions/numbersystemconverter/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_Sample/JoinTools_Sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Sample/JoinTools_Sample.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinTools_Sample/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Sample/src/test/java/org/chaoscoders/extensions/sample/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_SlotMachine/JoinTools_SlotMachine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_SlotMachine/JoinTools_SlotMachine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinTools_SlotMachine/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_SlotMachine/src/test/java/org/chaoscoders/extensions/slotmachine/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_ToDoList/JoinTools_ToDoList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_ToDoList/JoinTools_ToDoList.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinTools_ToDoList/src/test/java/org/chaoscoders/extensions/calculator/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_ToDoList/src/test/java/org/chaoscoders/extensions/todolist/MainControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,15 +45,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/JoinTools_Converter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Users\walfo\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\202.7319.50\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
+    <setting file="file://$PROJECT_DIR$/JoinTools_Converter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1hmbb1zHhF1fu85i6vQGgtzV6eP" />
   <component name="ProjectLevelVcsManager">
@@ -73,20 +59,26 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JoinTools_NumberSystemConverter" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/JoinTools_Calculator/src/main/java/org/chaoscoders/extensions/calculator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JoinTools_Calculator" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2816092" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\P\workspace\JFXJoinTools\JoinTools_Calculator" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.chaoscoders.extensions.numbersystemconverter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\P\workspace\JFXJoinTools\JoinTools_Calculator" />
       <recent name="D:\Development\Java Projects\Other Projects\JFXJoinTools_Maven" />
     </key>
   </component>
@@ -537,13 +529,29 @@
       <option name="project" value="LOCAL" />
       <updated>1600973944448</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changed Icon">
+      <created>1601239716979</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601239716979</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
@@ -555,9 +563,14 @@
     <MESSAGE value="Minor Adjustment" />
     <MESSAGE value="Fixed pom.xml for justus. to be continued..." />
     <MESSAGE value="close #33" />
-    <option name="LAST_COMMIT_MESSAGE" value="close #33" />
+    <MESSAGE value="changed Icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed Icon" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="114" key="#Project_Structure" timestamp="1601239012464">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="440" y="114" key="#Project_Structure/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@0.0.1920.1080" timestamp="1601239012464" />
     <state x="311" y="175" width="1219" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600993890016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -574,6 +587,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="389" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600961811581" />
+    <state x="-1230" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601239850339">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1230" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601239850339" />
     <state x="0" y="126" key="CommitChangelistDialog2" timestamp="1600993702964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -586,24 +603,32 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600970287847" />
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1600974021841">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="938" height="295" key="GridCell.Tab.0.bottom" timestamp="1601239885688">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="938" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601239885688" />
+    <state width="938" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@0.0.1920.1080" timestamp="1601239138699" />
     <state width="1877" height="291" key="GridCell.Tab.0.bottom/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
     <state width="1877" height="275" key="GridCell.Tab.0.bottom/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590199" />
-    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1600974021841">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="938" height="295" key="GridCell.Tab.0.center" timestamp="1601239885688">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="938" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601239885688" />
+    <state width="938" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@0.0.1920.1080" timestamp="1601239138699" />
     <state width="1877" height="291" key="GridCell.Tab.0.center/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
     <state width="1877" height="275" key="GridCell.Tab.0.center/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590199" />
-    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1600974021841">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="938" height="295" key="GridCell.Tab.0.left" timestamp="1601239885688">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="938" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601239885688" />
+    <state width="938" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@0.0.1920.1080" timestamp="1601239138698" />
     <state width="1877" height="291" key="GridCell.Tab.0.left/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
     <state width="1877" height="275" key="GridCell.Tab.0.left/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590198" />
-    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1600974021841">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="938" height="295" key="GridCell.Tab.0.right" timestamp="1601239885688">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="938" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601239885688" />
+    <state width="938" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@0.0.1920.1080" timestamp="1601239138699" />
     <state width="1877" height="291" key="GridCell.Tab.0.right/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
     <state width="1877" height="275" key="GridCell.Tab.0.right/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600691590199" />
     <state width="1877" height="291" key="GridCell.Tab.1.bottom" timestamp="1600974021841">
@@ -622,18 +647,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="291" key="GridCell.Tab.1.right/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600974021841" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1600967726068">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1480" y="98" key="SettingsEditor" timestamp="1601238901098">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="-1480" y="98" key="SettingsEditor/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601238901098" />
     <state x="440" y="94" key="SettingsEditor/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600967726068" />
     <state x="2360" y="101" key="SettingsEditor/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@1920.7.1920.1040" timestamp="1600624639399" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600973947056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600973947056" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600993590654">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="776" y="317" key="chooseDestDirectoryDialog" timestamp="1601239040526">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="776" y="317" key="chooseDestDirectoryDialog/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@0.0.1920.1080" timestamp="1601239040526" />
+    <state x="-1143" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601239578465">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1143" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601239578465" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600993590654" />
     <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600707413966">
       <screen x="0" y="0" width="1920" height="1040" />
