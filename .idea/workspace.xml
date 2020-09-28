@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a8ceff8b-70bc-4d51-a1bc-fb5590bf5613" name="Default Changelist" comment="changed Icon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTools_Calculator/JoinTools_Calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Calculator/JoinTools_Calculator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_Calculator/src/main/resources/icon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_Converter/JoinTools_Converter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Converter/JoinTools_Converter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoinTools_Launcher/JoinTools_Launcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTools_Launcher/JoinTools_Launcher.iml" afterDir="false" />
@@ -45,8 +46,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JoinTools_Converter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/JoinTools_NumberSystemConverter/src/main/resources/plugin.yml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1hmbb1zHhF1fu85i6vQGgtzV6eP" />
   <component name="ProjectLevelVcsManager">
@@ -71,15 +72,15 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\P\workspace\JFXJoinTools\JoinTools_Calculator" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.chaoscoders.extensions.numbersystemconverter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\P\workspace\JFXJoinTools\JoinTools_Calculator" />
       <recent name="D:\Development\Java Projects\Other Projects\JFXJoinTools_Maven" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\P\workspace\JFXJoinTools\JoinTools_Calculator" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.RunLauncher">
@@ -543,15 +544,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
@@ -564,7 +556,8 @@
     <MESSAGE value="Fixed pom.xml for justus. to be continued..." />
     <MESSAGE value="close #33" />
     <MESSAGE value="changed Icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed Icon" />
+    <MESSAGE value="Configurations added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configurations added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="114" key="#Project_Structure" timestamp="1601239012464">
@@ -657,30 +650,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600973947056" />
-    <state x="776" y="317" key="chooseDestDirectoryDialog" timestamp="1601239040526">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="776" y="317" key="chooseDestDirectoryDialog/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@0.0.1920.1080" timestamp="1601239040526" />
-    <state x="-1143" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601239578465">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1143" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/-1920.-1080.1920.1080/-1920.0.1920.1080/0.-1080.1920.1080@-1920.0.1920.1080" timestamp="1601239578465" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600993590654" />
-    <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600707413966">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600707413966" />
-    <state x="546" y="181" key="new project wizard" timestamp="1600624462859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="546" y="181" key="new project wizard/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600624462859" />
-    <state x="755" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1600966778499">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="755" y="267" key="refactoring.ChangeSignatureDialog/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600966778499" />
-    <state x="623" y="225" key="search.everywhere.popup" timestamp="1600624457210">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" key="search.everywhere.popup/1920.7.1920.1040/0.0.1920.1040/1923.-1043.1680.1010/3.-1080.1920.1040@0.0.1920.1040" timestamp="1600624457210" />
   </component>
 </project>
