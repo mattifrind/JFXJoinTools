@@ -8,7 +8,14 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.util.LinkedList;
+
 public class Main extends Application {
+
+    public static Stage primaryStage;
+    public static Scene mainScene;
+    public static Scene addTaskScene;
+    public static LinkedList<Task> Tasks = new LinkedList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -21,12 +28,17 @@ public class Main extends Application {
 
         //Parent root =  FXMLLoader.load(Main.class.getClassLoader().getResource("Main.fxml"));
 
-        primaryStage.setTitle("JoinTools Sample Plugin");
+        primaryStage.setTitle("JoinTools ToDoList");
 
         //bei Bedarf hier den Namen des Icons anpassen
-        primaryStage.getIcons().add(new Image("icon.png"));
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.getIcons().add(new Image("org/chaoscoders/firstextension/res/icon.png"));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
+        //Setup Stage und Scenes
+        Main.primaryStage = primaryStage;
+        Main.mainScene = new Scene(FXMLLoader.load(getClass().getResource("Main.fxml")));
+        Main.addTaskScene = new Scene(FXMLLoader.load(getClass().getResource("addTask.fxml")));
     }
 
     public static void main(String[] args) {

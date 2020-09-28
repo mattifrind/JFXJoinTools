@@ -4,7 +4,6 @@ import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
-import org.chaoscoders.jfxextensionapi.api.settings.SettingManager;
 import org.chaoscoders.jfxextensionapi.api.settings.Settings;
 import org.chaoscoders.jfxextensionapi.api.util.CustomFXMLLoader;
 
@@ -21,7 +20,7 @@ public class ExtensionMain extends JavaFXExtension {
 
     @Override
     public Node getRoot() {
-        return CustomFXMLLoader.loadFXMLFile("Main.fxml", this, (Node) new AnchorPane(), new MainController());
+        return CustomFXMLLoader.loadFXMLFile("org/chaoscoders/firstextension/res/Main.fxml", this, (Node) new AnchorPane(), new MainController());
     }
 
     @Override
