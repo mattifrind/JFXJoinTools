@@ -39,6 +39,7 @@ public class Main extends Application {
         Main.primaryStage = primaryStage;
         Main.mainScene = new Scene(FXMLLoader.load(getClass().getResource("Main.fxml")));
         Main.addTaskScene = new Scene(FXMLLoader.load(getClass().getResource("addTask.fxml")));
+
     }
 
     public static void main(String[] args) {
