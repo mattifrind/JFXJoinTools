@@ -1,4 +1,4 @@
-package org.chaoscoders.extensions.calculator;
+package org.chaoscoders.extensions.calculator.frontend;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;

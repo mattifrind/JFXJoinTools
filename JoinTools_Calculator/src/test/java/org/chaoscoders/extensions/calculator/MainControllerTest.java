@@ -1,5 +1,6 @@
 package org.chaoscoders.extensions.calculator;
 
+import org.chaoscoders.extensions.calculator.frontend.MainController;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

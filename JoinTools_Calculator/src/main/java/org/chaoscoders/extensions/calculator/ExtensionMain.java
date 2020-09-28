@@ -2,6 +2,7 @@ package org.chaoscoders.extensions.calculator;
 
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import org.chaoscoders.extensions.calculator.frontend.MainController;
 import org.chaoscoders.jfxextensionapi.api.JavaFXExtension;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionInfo;
 import org.chaoscoders.jfxextensionapi.api.extensioninfo.ExtensionType;
