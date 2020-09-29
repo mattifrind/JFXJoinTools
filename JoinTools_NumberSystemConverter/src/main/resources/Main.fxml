@@ -28,7 +28,7 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <TextField promptText="Number to be converted" style="-fx-background-color: #e2ece2;" />
+            <TextField fx:id="tfNumberInput" promptText="Number to be converted" style="-fx-background-color: #e2ece2;" />
             <Label text="Current System:">
                <font>
                   <Font name="System Bold" size="12.0" />

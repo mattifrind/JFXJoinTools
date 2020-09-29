@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 import java.net.URL;
@@ -40,9 +41,15 @@ public class MainController implements Initializable {
     Button btnConvert;
 
     @FXML
+    TextField tfNumberInput;
+
+    @FXML
     private void printMyShit(ActionEvent event){
         System.out.println(tgCurrentSys.getSelectedToggle().getUserData()+" Original System");
         System.out.println(tgTargetSys.getSelectedToggle().getUserData()+" Target System");
+        Converter myConverter = new Converter((NumberSystem) tgCurrentSys.getSelectedToggle().getUserData(), (NumberSystem) tgTargetSys.getSelectedToggle().getUserData());
+        String numberInput = tfNumberInput.getText();
+        System.out.println(myConverter.testFunctionnality(numberInput));
     }
 
 
