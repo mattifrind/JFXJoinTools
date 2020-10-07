@@ -70,9 +70,9 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Label prefHeight="51.0" prefWidth="77.0" style="-fx-border-color: #000000;" text="Result" textAlignment="CENTER">
+                  <Label fx:id="lblResult" prefHeight="51.0" prefWidth="126.0" style="-fx-border-color: #000000;" text="Result" textAlignment="CENTER">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                </children>

@@ -3,10 +3,7 @@ package org.chaoscoders.extensions.numbersystemconverter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,6 +35,9 @@ public class MainController implements Initializable {
     RadioButton rbtnTarHex;
 
     @FXML
+    Label lblResult;
+
+    @FXML
     Button btnConvert;
 
     @FXML
@@ -49,7 +49,7 @@ public class MainController implements Initializable {
         System.out.println(tgTargetSys.getSelectedToggle().getUserData()+" Target System");
         Converter myConverter = new Converter((NumberSystem) tgCurrentSys.getSelectedToggle().getUserData(), (NumberSystem) tgTargetSys.getSelectedToggle().getUserData());
         String numberInput = tfNumberInput.getText();
-        System.out.println(myConverter.testFunctionnality(numberInput));
+        lblResult.setText(myConverter.getString(numberInput));
     }
 
 
