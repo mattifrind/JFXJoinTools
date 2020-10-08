@@ -47,39 +47,7 @@ public class NumberSysConverter {
 
     }
 
-    private char decValueToHexChar(int value){
-        char newValue = (char) value;
-        if(value > 9){
-            switch (newValue){
-                case 10 -> newValue = 'A';
-                case 11 -> newValue = 'B';
-                case 12 -> newValue = 'C';
-                case 13 -> newValue = 'D';
-                case 14 -> newValue = 'E';
-                case 15 -> newValue = 'F';
-            }
-        } else {
-            newValue += '0';
-        }
-        return newValue;
-    }
 
-    private char hexDigitToDecValue(char digit){
-        //Takes a Digit up to Hex and returns decimal value
-        if (digit > '9'){
-            switch (digit){
-                case 'a', 'A'-> digit = 10;
-                case 'b', 'B'-> digit = 11;
-                case 'c', 'C'-> digit = 12;
-                case 'd', 'D'-> digit = 13;
-                case 'e', 'E'-> digit = 14;
-                case 'f', 'F'-> digit = 15;
-            }
-        } else {
-            digit -= '0';
-        }
-        return digit;
-    }
 
     private boolean evaluateInput(String inNumber){ // Calculates Decimal Value of Input
         inNumber = inNumber.trim();
@@ -90,7 +58,7 @@ public class NumberSysConverter {
             int i = 0;
             for (int j = frags[0].length()-1; j>=0; j-- ){
                 char digit = frags[0].charAt(j);
-                digit = hexDigitToDecValue(digit);
+                digit = hexLiteralToDecValue(digit);
                 value += digit*Math.pow(hornerFactor, i++);
             }
             //ggf. Konvertierung von Nachkommastellen
@@ -98,7 +66,7 @@ public class NumberSysConverter {
                 i = 1;
                 for (int j = 0; j <frags[1].length(); j++){
                     char digit = frags[1].charAt(j);
-                    digit = hexDigitToDecValue(digit);
+                    digit = hexLiteralToDecValue(digit);
                     value += digit*Math.pow(hornerFactor, -(i++));
                 }
             }
@@ -129,6 +97,40 @@ public class NumberSysConverter {
         return internalNumberSysConverter.convertString(numberString);
     }
 
+    public static char decValueToHexLiteral(int value){
+        char newValue = (char) value;
+        if(value > 9){
+            switch (newValue){
+                case 10 -> newValue = 'A';
+                case 11 -> newValue = 'B';
+                case 12 -> newValue = 'C';
+                case 13 -> newValue = 'D';
+                case 14 -> newValue = 'E';
+                case 15 -> newValue = 'F';
+            }
+        } else {
+            newValue += '0';
+        }
+        return newValue;
+    }
+
+    public static char hexLiteralToDecValue(char digit){
+        //Takes a Digit up to Hex and returns decimal value
+        if (digit > '9'){
+            switch (digit){
+                case 'a', 'A'-> digit = 10;
+                case 'b', 'B'-> digit = 11;
+                case 'c', 'C'-> digit = 12;
+                case 'd', 'D'-> digit = 13;
+                case 'e', 'E'-> digit = 14;
+                case 'f', 'F'-> digit = 15;
+            }
+        } else {
+            digit -= '0';
+        }
+        return digit;
+    }
+
     public String convertString(String numberString){
         String result;
         if(evaluateInput(numberString)){
@@ -137,7 +139,7 @@ public class NumberSysConverter {
             String beforePoint = "";
             String afterPoint = "";
             while (naturalFrag > 0){
-                beforePoint = decValueToHexChar(naturalFrag % divisior) + beforePoint;
+                beforePoint = decValueToHexLiteral(naturalFrag % divisior) + beforePoint;
                 naturalFrag /= divisior;
             }
             int precision = 6;                                                          //PRECISION CAN BE SET HERE
@@ -145,7 +147,7 @@ public class NumberSysConverter {
             while (fractionFrag >= 0 && precision != 0){
                 fractionFrag *= divisior;
                 tempIntResidue = (int) fractionFrag;
-                afterPoint = afterPoint + decValueToHexChar(tempIntResidue);
+                afterPoint = afterPoint + decValueToHexLiteral(tempIntResidue);
                 fractionFrag = fractionFrag % 1;
                 precision --;
             }
