@@ -44,12 +44,11 @@ public class MainController implements Initializable {
     TextField tfNumberInput;
 
     @FXML
-    private void printMyShit(ActionEvent event){
-        System.out.println(tgCurrentSys.getSelectedToggle().getUserData()+" Original System");
-        System.out.println(tgTargetSys.getSelectedToggle().getUserData()+" Target System");
-        Converter myConverter = new Converter((NumberSystem) tgCurrentSys.getSelectedToggle().getUserData(), (NumberSystem) tgTargetSys.getSelectedToggle().getUserData());
+    private void convertButton(ActionEvent event){
+        NumberSystem originSys = (NumberSystem) tgCurrentSys.getSelectedToggle().getUserData();
+        NumberSystem tarSys = (NumberSystem) tgTargetSys.getSelectedToggle().getUserData();
         String numberInput = tfNumberInput.getText();
-        lblResult.setText(myConverter.convertString(numberInput));
+        lblResult.setText(NumberSysConverter.instantConversion(originSys, tarSys, numberInput));
     }
 
 

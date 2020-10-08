@@ -65,7 +65,7 @@
             </HBox>
             <HBox prefHeight="76.0" prefWidth="280.0" spacing="10.0">
                <children>
-                  <Button fx:id="btnConvert" mnemonicParsing="false" onAction="#printMyShit" prefHeight="51.0" prefWidth="104.0" style="-fx-background-color: #617869; -fx-border-color: #000000;" text="Convert" textFill="#e2ece2">
+                  <Button fx:id="btnConvert" mnemonicParsing="false" onAction="#convertButton" prefHeight="51.0" prefWidth="104.0" style="-fx-background-color: #617869; -fx-border-color: #000000;" text="Convert" textFill="#e2ece2">
                      <font>
                         <Font size="18.0" />
                      </font>

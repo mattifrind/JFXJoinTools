@@ -2,7 +2,7 @@ package org.chaoscoders.extensions.numbersystemconverter;
 
 import java.util.regex.Pattern;
 
-public class Converter {
+public class NumberSysConverter {
     private NumberSystem originSys, targetSys;
     private static String pointRegEx = "([\\.,])";
     private int hornerFactor, divisior;
@@ -110,14 +110,14 @@ public class Converter {
 
 
 
-    public Converter(){
+    public NumberSysConverter(){
         originSys = NumberSystem.DECIMAL;
         targetSys = NumberSystem.DECIMAL;
         hornerFactor = 10;
         divisior = 10;
     }
 
-    public Converter(NumberSystem ori, NumberSystem tar){
+    public NumberSysConverter(NumberSystem ori, NumberSystem tar){
         originSys = ori;
         targetSys = tar;
         originSysEval();
@@ -125,8 +125,8 @@ public class Converter {
     }
 
     public static String instantConversion(NumberSystem originSys, NumberSystem targetSys, String numberString){
-        Converter internalConverter = new Converter(originSys, targetSys);
-        return internalConverter.convertString(numberString);
+        NumberSysConverter internalNumberSysConverter = new NumberSysConverter(originSys, targetSys);
+        return internalNumberSysConverter.convertString(numberString);
     }
 
     public String convertString(String numberString){
