@@ -82,47 +82,6 @@ public class Converter {
         return digit;
     }
 
-    public String getString(String inputString){
-        String result;
-        if(evaluateInput(inputString)){
-        int naturalFrag = (int) decimalValue;
-        double fractionFrag = decimalValue % 1;
-        String beforePoint = "";
-        String afterPoint = "";
-        while (naturalFrag > 0){
-            beforePoint = decValueToHexChar(naturalFrag % divisior) + beforePoint;
-            naturalFrag /= divisior;
-        }
-        int precision = 6;                                                          //PRECISION CAN BE SET HERE
-        int tempIntResidue;
-        while (fractionFrag >= 0 && precision != 0){
-            fractionFrag *= divisior;
-            tempIntResidue = (int) fractionFrag;
-            afterPoint = afterPoint + decValueToHexChar(tempIntResidue);
-            fractionFrag = fractionFrag % 1;
-            precision --;
-        }
-        result = beforePoint + '.' + afterPoint;
-        } else {
-            result = "Faulty Input";
-        }
-        return result;
-    }
-
-    public Converter(){
-        originSys = NumberSystem.DECIMAL;
-        targetSys = NumberSystem.DECIMAL;
-        hornerFactor = 10;
-        divisior = 10;
-    }
-
-    public Converter(NumberSystem ori, NumberSystem tar){
-        originSys = ori;
-        targetSys = tar;
-        originSysEval();
-        targetSysEval();
-    }
-
     private boolean evaluateInput(String inNumber){ // Calculates Decimal Value of Input
         inNumber.trim();
         double value = 0;
@@ -148,16 +107,57 @@ public class Converter {
             return true;
         }
         return false;
-
-
     }
 
-   public boolean testFunctionnality(String numString){
+
+
+    public Converter(){
+        originSys = NumberSystem.DECIMAL;
+        targetSys = NumberSystem.DECIMAL;
+        hornerFactor = 10;
+        divisior = 10;
+    }
+
+    public Converter(NumberSystem ori, NumberSystem tar){
+        originSys = ori;
+        targetSys = tar;
+        originSysEval();
+        targetSysEval();
+    }
+
+    public String getString(String inputString){
+        String result;
+        if(evaluateInput(inputString)){
+            int naturalFrag = (int) decimalValue;
+            double fractionFrag = decimalValue % 1;
+            String beforePoint = "";
+            String afterPoint = "";
+            while (naturalFrag > 0){
+                beforePoint = decValueToHexChar(naturalFrag % divisior) + beforePoint;
+                naturalFrag /= divisior;
+            }
+            int precision = 6;                                                          //PRECISION CAN BE SET HERE
+            int tempIntResidue;
+            while (fractionFrag >= 0 && precision != 0){
+                fractionFrag *= divisior;
+                tempIntResidue = (int) fractionFrag;
+                afterPoint = afterPoint + decValueToHexChar(tempIntResidue);
+                fractionFrag = fractionFrag % 1;
+                precision --;
+            }
+            result = beforePoint + '.' + afterPoint;
+        } else {
+            result = "Faulty Input";
+        }
+        return result;
+    }
+
+   /*public boolean testFunctionnality(String numString){
         boolean success = evaluateInput(numString);
         if (success) System.out.println(decimalValue);
        System.out.println(getString(numString));
         return success;
-    }
+    }*/
 
 
 
