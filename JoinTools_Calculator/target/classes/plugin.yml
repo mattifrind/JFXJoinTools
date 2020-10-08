@@ -1,0 +1,5 @@
+# Trage hier deine Metadaten ein.
+# Name und Version denkst du dir aus.
+# Der Text aus dem Tooltip wird in der Hauptanwendung beim Hovern über dein Tool angezeigt.
+
+main: org.chaoscoders.extensions.calculator.ExtensionMain
