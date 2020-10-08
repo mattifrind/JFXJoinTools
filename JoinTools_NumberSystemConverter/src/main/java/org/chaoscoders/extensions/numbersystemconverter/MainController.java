@@ -35,7 +35,7 @@ public class MainController implements Initializable {
     RadioButton rbtnTarHex;
 
     @FXML
-    Label lblResult;
+    TextField tfResult;
 
     @FXML
     Button btnConvert;
@@ -48,7 +48,7 @@ public class MainController implements Initializable {
         NumberSystem originSys = (NumberSystem) tgCurrentSys.getSelectedToggle().getUserData();
         NumberSystem tarSys = (NumberSystem) tgTargetSys.getSelectedToggle().getUserData();
         String numberInput = tfNumberInput.getText();
-        lblResult.setText(NumberSysConverter.instantConversion(originSys, tarSys, numberInput));
+        tfResult.setText(NumberSysConverter.instantConversion(originSys, tarSys, numberInput));
     }
 
 

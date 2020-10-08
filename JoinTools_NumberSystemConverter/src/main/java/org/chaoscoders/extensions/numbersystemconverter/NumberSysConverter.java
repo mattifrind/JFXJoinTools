@@ -96,6 +96,7 @@ public class NumberSysConverter {
         originSysEval();
         targetSysEval();
     }
+
     //String-Repräsentation zu Dezimalem wert
     public static double stringToValue (NumberSystem originSys, String numberString){
         NumberSysConverter internalNumberSysConverter = new NumberSysConverter(originSys, NumberSystem.DECIMAL);
