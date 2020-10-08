@@ -83,7 +83,7 @@ public class Converter {
     }
 
     private boolean evaluateInput(String inNumber){ // Calculates Decimal Value of Input
-        inNumber.trim();
+        inNumber = inNumber.trim();
         double value = 0;
         if (validString(inNumber)){
             //Konvertierung von Vorkommastellen
