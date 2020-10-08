@@ -1,5 +1,6 @@
 package org.chaoscoders.extensions.numbersystemconverter;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Converter {
@@ -30,11 +31,11 @@ public class Converter {
     private boolean validString(String input){
         String regularExpression;
         switch (originSys){
-            case BINARY -> regularExpression = "[^01\\.,]";
-            case OCTAL -> regularExpression = "[^01234567\\.,]";
-            case DECIMAL -> regularExpression = "[^123456789\\.,]";
-            case HEX -> regularExpression = "[^1-9a-fA-F\\.,]";
-            default -> regularExpression = ".";
+            case BINARY -> regularExpression = "[01//.,]*";
+            case OCTAL -> regularExpression = "[01234567\\.,]*";
+            case DECIMAL -> regularExpression = "[0123456789\\.,]*";
+            case HEX -> regularExpression = "[0123456789abcdefABCDEF\\.,]*";
+            default -> regularExpression = ".*";
         }
         boolean correctPoints = true;
         String[] pointSplit = input.split(pointRegEx);
@@ -42,7 +43,7 @@ public class Converter {
         if (pointSplit.length > 2){
             correctPoints = false;
         }
-        boolean correctChars = !Pattern.matches(regularExpression, input);
+        boolean correctChars = Pattern.matches(regularExpression, input);
         return correctChars && correctPoints;
 
     }
