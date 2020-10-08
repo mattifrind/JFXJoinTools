@@ -2,6 +2,11 @@ package org.chaoscoders.extensions.numbersystemconverter;
 
 import java.util.regex.Pattern;
 
+
+/*This Class is primarily for the conversion of String-Representations of floating-point numbers in the common
+* number-systems to string-representations in another common number-system. It can also return the double value of
+* a string-representation.
+* Additionally, it can convert char typed digit-literals to their decimal values and vice versa.*/
 public class NumberSysConverter {
     private NumberSystem originSys, targetSys;
     private static String pointRegEx = "([\\.,])";
@@ -91,9 +96,19 @@ public class NumberSysConverter {
         originSysEval();
         targetSysEval();
     }
-
+    //String-Repräsentation zu Dezimalem wert
+    public static double stringToValue (NumberSystem originSys, String numberString){
+        NumberSysConverter internalNumberSysConverter = new NumberSysConverter(originSys, NumberSystem.DECIMAL);
+        return internalNumberSysConverter.decimalValue;
+    }
+    //String-Repräsentation
     public static String instantConversion(NumberSystem originSys, NumberSystem targetSys, String numberString){
         NumberSysConverter internalNumberSysConverter = new NumberSysConverter(originSys, targetSys);
+        return internalNumberSysConverter.convertString(numberString);
+    }
+    //Default ist zu Dezimal
+    public static String instantConversion(NumberSystem originSys, String numberString){
+        NumberSysConverter internalNumberSysConverter = new NumberSysConverter(originSys, NumberSystem.DECIMAL);
         return internalNumberSysConverter.convertString(numberString);
     }
 
