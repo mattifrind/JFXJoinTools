@@ -49,7 +49,7 @@ public class MainController implements Initializable {
         System.out.println(tgTargetSys.getSelectedToggle().getUserData()+" Target System");
         Converter myConverter = new Converter((NumberSystem) tgCurrentSys.getSelectedToggle().getUserData(), (NumberSystem) tgTargetSys.getSelectedToggle().getUserData());
         String numberInput = tfNumberInput.getText();
-        lblResult.setText(myConverter.getString(numberInput));
+        lblResult.setText(myConverter.convertString(numberInput));
     }
 
 

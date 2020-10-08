@@ -1,6 +1,5 @@
 package org.chaoscoders.extensions.numbersystemconverter;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Converter {
@@ -125,9 +124,14 @@ public class Converter {
         targetSysEval();
     }
 
-    public String getString(String inputString){
+    public static String instantConversion(NumberSystem originSys, NumberSystem targetSys, String numberString){
+        Converter internalConverter = new Converter(originSys, targetSys);
+        return internalConverter.convertString(numberString);
+    }
+
+    public String convertString(String numberString){
         String result;
-        if(evaluateInput(inputString)){
+        if(evaluateInput(numberString)){
             int naturalFrag = (int) decimalValue;
             double fractionFrag = decimalValue % 1;
             String beforePoint = "";
