@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root alignment="center" hgap="10" style="-fx-background-color: #85a77d;" type="GridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root alignment="center" hgap="10" style="-fx-background-color: #ffffff;" type="GridPane" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -28,51 +28,51 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="tfNumberInput" promptText="Number to be converted" style="-fx-background-color: #e2ece2;" />
-            <Label text="Current System:">
+            <TextField fx:id="tfNumberInput" promptText="Number to be converted" style="-fx-background-color: #ffffff; -fx-border-color: #b2bdc3;" />
+            <Label text="Current System:" textFill="#738192">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <HBox prefHeight="28.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <RadioButton fx:id="rbtnCurBin" mnemonicParsing="false" text="Binary">
+                  <RadioButton fx:id="rbtnCurBin" mnemonicParsing="false" text="Binary" textFill="#738192">
                      <toggleGroup>
                         <ToggleGroup fx:id="tgCurrentSys" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="rbtnCurOct" mnemonicParsing="false" text="Octal" toggleGroup="$tgCurrentSys" />
-                  <RadioButton fx:id="rbtnCurDec" mnemonicParsing="false" text="Decimal" toggleGroup="$tgCurrentSys" />
-                  <RadioButton fx:id="rbtnCurHex" mnemonicParsing="false" text="Hex" toggleGroup="$tgCurrentSys" />
+                  <RadioButton fx:id="rbtnCurOct" mnemonicParsing="false" text="Octal" textFill="#738192" toggleGroup="$tgCurrentSys" />
+                  <RadioButton fx:id="rbtnCurDec" mnemonicParsing="false" text="Decimal" textFill="#738192" toggleGroup="$tgCurrentSys" />
+                  <RadioButton fx:id="rbtnCurHex" mnemonicParsing="false" text="Hex" textFill="#738192" toggleGroup="$tgCurrentSys" />
                </children>
             </HBox>
-            <Label text="Target System:">
+            <Label text="Target System:" textFill="#738192">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <HBox prefHeight="28.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <RadioButton fx:id="rbtnTarBin" mnemonicParsing="false" text="Binary">
+                  <RadioButton fx:id="rbtnTarBin" mnemonicParsing="false" text="Binary" textFill="#738192">
                      <toggleGroup>
                         <ToggleGroup fx:id="tgTargetSys" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="rbtnTarOct" mnemonicParsing="false" text="Octal" toggleGroup="$tgTargetSys" />
-                  <RadioButton fx:id="rbtnTarDec" mnemonicParsing="false" text="Decimal" toggleGroup="$tgTargetSys" />
-                  <RadioButton fx:id="rbtnTarHex" mnemonicParsing="false" text="Hex" toggleGroup="$tgTargetSys" />
+                  <RadioButton fx:id="rbtnTarOct" mnemonicParsing="false" text="Octal" textFill="#738192" toggleGroup="$tgTargetSys" />
+                  <RadioButton fx:id="rbtnTarDec" mnemonicParsing="false" text="Decimal" textFill="#738192" toggleGroup="$tgTargetSys" />
+                  <RadioButton fx:id="rbtnTarHex" mnemonicParsing="false" text="Hex" textFill="#738192" toggleGroup="$tgTargetSys" />
                </children>
             </HBox>
             <HBox prefHeight="76.0" prefWidth="280.0" spacing="10.0">
                <children>
-                  <Button fx:id="btnConvert" mnemonicParsing="false" onAction="#convertButton" prefHeight="51.0" prefWidth="104.0" style="-fx-background-color: #617869; -fx-border-color: #000000;" text="Convert" textFill="#e2ece2">
+                  <Button fx:id="btnConvert" mnemonicParsing="false" onAction="#convertButton" prefHeight="51.0" prefWidth="104.0" style="-fx-background-color: #2c6e8d; -fx-border-color: #000000;" text="Convert" textFill="#e2ece2">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Label fx:id="lblResult" prefHeight="51.0" prefWidth="126.0" style="-fx-border-color: #000000;" text="Result" textAlignment="CENTER">
+                  <Label fx:id="lblResult" contentDisplay="CENTER" lineSpacing="4.0" prefHeight="51.0" prefWidth="126.0" style="-fx-border-color: #b2bdc3;" text="(Your Result)" textFill="#2c6e8d" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font size="14.0" />
                      </font>
                   </Label>
                </children>
